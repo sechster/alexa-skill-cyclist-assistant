@@ -57,3 +57,4 @@ typings/
 # dotenv environment variables file
 .env
 
+backend/access_keys/google_api_key.json

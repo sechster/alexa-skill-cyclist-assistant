@@ -1,0 +1,15 @@
+let attire = {
+    headGear: "",
+    smogMask: "",
+    shirt: "",
+    jacket: "",
+    gloves: "",
+    pants: "",
+    socks: "",
+    shoes: "",
+    overshoes: "",
+    armWarmers: "",
+    legWarmers: "",
+    rainJacket: "",
+    glasses: "",
+}
