@@ -1,5 +1,9 @@
 module.exports = function ConditionsModule() {
 
+    function getCurrentSeason() {
+        
+    }
+
     function isSunny() {
 
     }
@@ -32,7 +36,12 @@ module.exports = function ConditionsModule() {
         
     }
 
+    function getAverageTemperature() {
+        
+    }
+
     let publicApi = {
+        getCurrentSeason: getCurrentSeason,
         isSunny: isSunny,
         isCloudy: isCloudy,
         isDark: isDark,
@@ -41,6 +50,7 @@ module.exports = function ConditionsModule() {
         itMightRain: itMightRain,
         isWet: isWet,
         getMinimumTemperature: getMinimumTemperature,
+        getAverageTemperature: getAverageTemperature,
     }
 
     return publicApi;

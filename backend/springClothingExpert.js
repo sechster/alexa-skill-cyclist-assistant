@@ -1,12 +1,8 @@
 // builder pattern - concrete builder
-module.exports = function summerClothingExpertModule(conditions) {
+module.exports = function springClothingExpertModule(conditions) {
 
     function adviseHeadGear() {
-        if (conditions.isCloudy() == false) {
-            return "cycling cap";
-        }
-
-        return "";
+        return "cycling cap";
     }
 
     function adviseSmogMask() {
@@ -18,6 +14,10 @@ module.exports = function summerClothingExpertModule(conditions) {
     }
 
     function adviseShirt(){
+        if (conditions.getAverageTemperature() < 17) {
+            return "long sleeve shirt";
+        }
+
         return "short sleeve shirt";
     }
 
@@ -38,8 +38,16 @@ module.exports = function summerClothingExpertModule(conditions) {
     }
 
     function adviseArmWarmers() {
-        if (conditions.getMinimumTemperature() < 17) {
+        if (conditions.getAverageTemperature() >= 17 && conditions.getMinimumTemperature() < 17) {
             return "take arm warmers";
+        }
+
+        return "";
+    }
+
+    function adviseLegWarmers() {
+        if (conditions.getMinimumTemperature() < 10) {
+            return "take leg warmers";
         }
 
         return "";
@@ -75,6 +83,7 @@ module.exports = function summerClothingExpertModule(conditions) {
         adviseSocks: adviseSocks,
         adviseShoes: adviseShoes,
         adviseArmWarmers: adviseArmWarmers,
+        adviseLegWarmers: adviseLegWarmers,
         adviseRainJacket: adviseRainJacket,
         adviseGlasses: adviseGlasses
     } 
