@@ -15,7 +15,7 @@ describe('AutumnAttireBuilder', function() {
     let conditions = new Conditions();
     sinon.stub(conditions, "getMinimumTemperature").callsFake(function() { return -1 });
     let sut = new Sut(conditions);
-
+    
     // act
     let result = sut.adviseHeadGear();
 
