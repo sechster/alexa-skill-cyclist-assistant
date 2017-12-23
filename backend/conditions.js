@@ -24,13 +24,23 @@ module.exports = function ConditionsModule() {
         
     }
 
+    function isWet() {
+        
+    }
+
+    function getMinimumTemperature() {
+        
+    }
+
     let publicApi = {
         isSunny: isSunny,
         isCloudy: isCloudy,
         isDark: isDark,
         isSmoggy: isSmoggy,
         isChilly: isChilly,
-        itMightRain: itMightRain
+        itMightRain: itMightRain,
+        isWet: isWet,
+        getMinimumTemperature: getMinimumTemperature,
     }
 
     return publicApi;
