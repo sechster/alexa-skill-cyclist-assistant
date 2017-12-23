@@ -1,4 +1,4 @@
-module.exports = function ConditionsModule() {
+module.exports = function conditionsModule() {
 
     function getCurrentSeason() {
         

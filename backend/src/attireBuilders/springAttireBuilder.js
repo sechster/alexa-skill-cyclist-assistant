@@ -1,5 +1,5 @@
 // builder pattern - concrete builder
-module.exports = function springClothingExpertModule(conditions) {
+module.exports = function springAttireBuilderModule(conditions) {
 
     function adviseHeadGear() {
         return "cycling cap";

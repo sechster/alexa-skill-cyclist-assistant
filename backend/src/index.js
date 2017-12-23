@@ -2,9 +2,9 @@ exports.handler = (event, context, callback) => {
 
     // https://www.apixu.com
     
-    let weatherService = require("./weatherService");
+    let weatherService = require("./services/weatherService");
     let airConditionService = require("./airConditionService");
-    let factory = require('./clothingExpertFactory');
+    let factory = require('./attireBuilderFactory');
 
     let weather = weatherService.getWeatherForNextHours(hours);
     let airCondition = airConditionService.getCurrentAirCondition();

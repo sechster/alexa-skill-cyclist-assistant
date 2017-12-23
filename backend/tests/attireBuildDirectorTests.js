@@ -1,12 +1,12 @@
 let chai = require('chai');
 let sinon = require('sinon');
 
-let Sut = require('./../attire');
+let Sut = require('./../src/attireBuildDirector');
 
 let expect = chai.expect;
 
 
-describe('Attire', function() {
+describe('AttireBuildDirector', function() {
 
   it('If only adviseHeadGear is defined on the expert only its result is returned', function() {
 

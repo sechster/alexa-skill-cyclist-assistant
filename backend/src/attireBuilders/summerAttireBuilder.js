@@ -1,8 +1,12 @@
 // builder pattern - concrete builder
-module.exports = function winterClothingExpertModule(conditions) {
+module.exports = function summerAttireBuilderModule(conditions) {
 
     function adviseHeadGear() {
-        return "balaclava";
+        if (conditions.isCloudy() == false) {
+            return "cycling cap";
+        }
+
+        return "";
     }
 
     function adviseSmogMask() {
@@ -14,31 +18,39 @@ module.exports = function winterClothingExpertModule(conditions) {
     }
 
     function adviseShirt(){
-        return "long sleeve shirt";
-    }
-
-    function adviseJacket(){
-        return "cycling jacket";
+        return "short sleeve shirt";
     }
 
     function adviseGloves() {
-        return "winter gloves";
+        return "short gloves";
     }
 
     function advisePants() {
-        return "long pants";
+        return "short pants";
     }
 
     function adviseSocks(){
-        return "warm socks";
+        return "regular socks";
     }
 
     function adviseShoes() {
-        return "high shoes";
+        return "low shoes";
     }
 
-    function adviseOvershoes() {
-        return "overshoes";
+    function adviseArmWarmers() {
+        if (conditions.getMinimumTemperature() < 17) {
+            return "take arm warmers";
+        }
+
+        return "";
+    }
+
+    function adviseRainJacket() {
+        if (conditions.itMightRain()) {
+            return "take rain jacket";
+        }
+
+        return "";
     }
 
     function adviseGlasses(){
@@ -58,12 +70,12 @@ module.exports = function winterClothingExpertModule(conditions) {
         adviseHeadGear: adviseHeadGear,
         adviseSmogMask: adviseSmogMask,
         adviseShirt: adviseShirt,
-        adviseJacket: adviseJacket,
         adviseGloves: adviseGloves,
         advisePants: advisePants,
         adviseSocks: adviseSocks,
         adviseShoes: adviseShoes,
-        adviseOvershoes: adviseOvershoes,
+        adviseArmWarmers: adviseArmWarmers,
+        adviseRainJacket: adviseRainJacket,
         adviseGlasses: adviseGlasses
     } 
 

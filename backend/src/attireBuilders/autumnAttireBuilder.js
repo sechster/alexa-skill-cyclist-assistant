@@ -1,5 +1,5 @@
 // builder pattern - concrete builder
-module.exports = function winterClothingExpertModule(conditions) {
+module.exports = function autumnAttireBuilderModule(conditions) {
 
     function adviseHeadGear() {
         if (conditions.getMinimumTemperature() <= 0)
