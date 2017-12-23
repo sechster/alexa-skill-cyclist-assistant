@@ -1,40 +1,25 @@
 let chai = require('chai');
 let sinon = require('sinon');
 
-let Sut = require('./../SummerClothingExpert');
+let Sut = require('./../WinterClothingExpert');
 let Conditions = require('./../conditions');
 
 let expect = chai.expect;
 
 
-describe('SummerClothingExpert', function() {
+describe('WinterClothingExpert', function() {
 
-  it('adviseHeadGear_advises_cycling_cap_if_it_is_not_cloudy', function() {
+  it('adviseHeadGear_advises_balaclava', function() {
 
     // arrange
     let conditions = new Conditions();
-    sinon.stub(conditions, 'isCloudy').callsFake( function() { return false; });
     let sut = new Sut(conditions);
 
     // act
     let result = sut.adviseHeadGear();
 
     // assert
-    expect(result).to.equal("cycling cap");
-  });
-
-  it('adviseHeadGear_advises_nothing_if_it_is_cloudy', function() {
-
-    // arrange
-    let conditions = new Conditions();
-    sinon.stub(conditions, 'isCloudy').callsFake( function() { return true; });
-    let sut = new Sut(conditions);
-
-    // act
-    let result = sut.adviseHeadGear();
-
-    // assert
-    expect(result).to.equal("");
+    expect(result).to.equal("balaclava");
   });
 
   it('adviseSmogMask_advises_mask_if_it_is_smoggy', function() {
@@ -66,7 +51,7 @@ describe('SummerClothingExpert', function() {
     expect(result).to.equal("");
   });
 
-  it('adviseShirt_advises_short_sleeve_shirt', function() {
+  it('adviseShirt_advises_long_sleeve_shirt', function() {
 
     // arrange
     let conditions = new Conditions();
@@ -76,10 +61,10 @@ describe('SummerClothingExpert', function() {
     let result = sut.adviseShirt();
 
     // assert
-    expect(result).to.equal("short sleeve shirt");
+    expect(result).to.equal("long sleeve shirt");
   });
 
-  it('adviseGloves_advises_short_gloves', function() {
+  it('adviseGloves_advises_winter_gloves', function() {
 
     // arrange
     let conditions = new Conditions();
@@ -89,10 +74,10 @@ describe('SummerClothingExpert', function() {
     let result = sut.adviseGloves();
 
     // assert
-    expect(result).to.equal("short gloves");
+    expect(result).to.equal("winter gloves");
   });
 
-  it('advisePants_advises_short_pants', function() {
+  it('advisePants_advises_long_pants', function() {
 
     // arrange
     let conditions = new Conditions();
@@ -102,10 +87,10 @@ describe('SummerClothingExpert', function() {
     let result = sut.advisePants();
 
     // assert
-    expect(result).to.equal("short pants");
+    expect(result).to.equal("long pants");
   });
 
-  it('adviseSocks_advises_regular_socks', function() {
+  it('adviseSocks_advises_warm_socks', function() {
 
     // arrange
     let conditions = new Conditions();
@@ -115,10 +100,10 @@ describe('SummerClothingExpert', function() {
     let result = sut.adviseSocks();
 
     // assert
-    expect(result).to.equal("regular socks");
+    expect(result).to.equal("warm socks");
   });
 
-  it('adviseShoes_advises_low_shoes', function() {
+  it('adviseShoes_advises_high_shoes', function() {
 
     // arrange
     let conditions = new Conditions();
@@ -128,63 +113,20 @@ describe('SummerClothingExpert', function() {
     let result = sut.adviseShoes();
 
     // assert
-    expect(result).to.equal("low shoes");
+    expect(result).to.equal("high shoes");
   });
 
-  it('adviseArmWarmers_advises_to_take_arm_warmers_if_it_is_chilly', function() {
+  it('adviseOvershoes_advises_overshoes', function() {
 
     // arrange
     let conditions = new Conditions();
-    sinon.stub(conditions, "isChilly").callsFake(function() { return true; });
     let sut = new Sut(conditions);
 
     // act
-    let result = sut.adviseArmWarmers();
+    let result = sut.adviseOvershoes();
 
     // assert
-    expect(result).to.equal("take arm warmers");
-  });
-
-  it('adviseArmWarmers_advises_not_to_take_arm_warmers_if_it_is_not_chilly', function() {
-
-    // arrange
-    let conditions = new Conditions();
-    sinon.stub(conditions, "isChilly").callsFake(function() { return false; });
-    let sut = new Sut(conditions);
-
-    // act
-    let result = sut.adviseArmWarmers();
-
-    // assert
-    expect(result).to.equal("");
-  });
-
-  it('adviseRainJacket_advises_to_take_rain_jacket_if_it_might_rain', function() {
-
-    // arrange
-    let conditions = new Conditions();
-    sinon.stub(conditions, "itMightRain").callsFake(function() { return true; });
-    let sut = new Sut(conditions);
-
-    // act
-    let result = sut.adviseRainJacket();
-
-    // assert
-    expect(result).to.equal("take rain jacket");
-  });
-
-  it('adviseRainJacket_advises_not_to_take_rain_jacket_if_it_will_not_rain', function() {
-
-    // arrange
-    let conditions = new Conditions();
-    sinon.stub(conditions, "itMightRain").callsFake(function() { return false; });
-    let sut = new Sut(conditions);
-
-    // act
-    let result = sut.adviseRainJacket();
-
-    // assert
-    expect(result).to.equal("");
+    expect(result).to.equal("overshoes");
   });
 
   it('adviseGlasses_advises_to_wear_sunglasses_level_three_if_it_is_not_cloudy_and_it_is_not_dark', function() {

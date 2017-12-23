@@ -1,4 +1,4 @@
-// buildr pattern - concrete builder
+// builder pattern - concrete builder
 module.exports = function summerClothingExpertModule(conditions) {
 
     function adviseHeadGear() {

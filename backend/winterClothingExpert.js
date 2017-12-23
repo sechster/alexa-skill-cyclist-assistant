@@ -1,3 +1,4 @@
+// builder pattern - concrete builder
 module.exports = function winterClothingExpertModule(conditions) {
 
     function adviseHeadGear() {
@@ -33,7 +34,7 @@ module.exports = function winterClothingExpertModule(conditions) {
     }
 
     function adviseShoes() {
-        return "winter shoes";
+        return "high shoes";
     }
 
     function adviseOvershoes() {
@@ -41,39 +42,30 @@ module.exports = function winterClothingExpertModule(conditions) {
     }
 
     function adviseGlasses(){
-        // if there is sun - dark glasses
-        // if there is no sun - moderate glasses
-        // if it is dark - transparent glasses
 
-        if (conditions.isSunny()) {
-            return "sunglasses level three";
-        } else if (conditions.isCloudy()) {
-            return "sunglasses level two";
-        } else if (conditions.isDark()) {
+        if (conditions.isDark()) {
             return "transparent glasses";
         }
 
-        return "";
+        if (conditions.isCloudy()) {
+            return "sunglasses level two";
+        } 
+
+        return "sunglasses level three";
     }
 
-    let attire = {
-        headGear: adviseHeadGear(),
-        smogMask: adviseSmogMask(),
-        shirt: adviseShirt(),
-        jacket: adviseJacket(),
-        gloves: adviseGloves(),
-        pants: advisePants(),
-        socks: adviseSocks(),
-        shoes: adviseShoes(),
-        overshoes: adviseOvershoes(),
-        glasses: adviseGlasses()
-    }
+    let publicApi = {
+        adviseHeadGear: adviseHeadGear,
+        adviseSmogMask: adviseSmogMask,
+        adviseShirt: adviseShirt,
+        adviseJacket: adviseJacket,
+        adviseGloves: adviseGloves,
+        advisePants: advisePants,
+        adviseSocks: adviseSocks,
+        adviseShoes: adviseShoes,
+        adviseOvershoes: adviseOvershoes,
+        adviseGlasses: adviseGlasses
+    } 
 
-    function getAdvice() {
-        return Object.values(attire).join(", ");
-    }    
-
-    return {
-        getAdvice: getAdvice
-    }
+    return publicApi;
 }
