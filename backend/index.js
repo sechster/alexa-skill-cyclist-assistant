@@ -14,6 +14,8 @@ exports.handler = (event, context, callback) => {
 
     let expert = factory.create(conditions);
 
+    
+
     let advice = expert.getAdvice();
 
 
