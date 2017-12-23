@@ -1,7 +1,10 @@
 module.exports = function winterClothingExpertModule(conditions) {
 
     function adviseHeadGear() {
-        return "balaclava";
+        if (conditions.getMinimumTemperature() <= 0)
+        {
+            return "take balaclava";
+        }
     }
 
     function adviseSmogMask() {
@@ -21,7 +24,7 @@ module.exports = function winterClothingExpertModule(conditions) {
     }
 
     function adviseGloves() {
-        return "winter gloves";
+        return "autumn gloves";
     }
 
     function advisePants() {
@@ -29,15 +32,23 @@ module.exports = function winterClothingExpertModule(conditions) {
     }
 
     function adviseSocks(){
-        return "warm socks";
+        return "regular socks";
     }
 
     function adviseShoes() {
-        return "winter shoes";
+        if (conditions.isWet()) {
+            return "high shoes";
+        }
+
+        return "MTB shoes";
     }
 
     function adviseOvershoes() {
-        return "overshoes";
+        if (conditions.isWet() || conditions.getMinimumTemperature() < 4) {
+            return "overshoes";
+        }
+
+        return "";
     }
 
     function adviseGlasses(){

@@ -84,7 +84,10 @@ module.exports = function summerClothingExpertModule(conditions) {
     }
 
     function getAdvice() {
-        return Object.values(attire).join(", ");
+        //return Object.values(attire).join(", ");
+        return Object.keys(attire).map(function(key) {
+            return attire[key];
+        }).join(", ");
     }    
 
     return {

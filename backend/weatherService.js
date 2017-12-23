@@ -1,5 +1,4 @@
-module.exports = (function WeatherServiceModule()
-{
+module.exports = (function WeatherServiceModule() {
 
     let publicApi = {
         getWeatherForNextHours: null
