@@ -58,3 +58,4 @@ typings/
 .env
 
 backend/access_keys/google_api_key.json
+backend/config/default.json

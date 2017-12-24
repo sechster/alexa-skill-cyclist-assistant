@@ -14,7 +14,7 @@ describe('AttireBuildDirector', function() {
     let sut = new Sut({ adviseHeadGear: function() { return "adviseHeadGear"; } });
 
     // act
-    let result = sut.getAdvice();
+    let result = sut.buildAdvice();
 
     // assert
     expect(result).to.equal("adviseHeadGear");
@@ -26,7 +26,7 @@ describe('AttireBuildDirector', function() {
     let sut = new Sut({ adviseSmogMask: function() { return "adviseSmogMask"; } });
 
     // act
-    let result = sut.getAdvice();
+    let result = sut.buildAdvice();
 
     // assert
     expect(result).to.equal("adviseSmogMask");
@@ -38,7 +38,7 @@ describe('AttireBuildDirector', function() {
     let sut = new Sut({ adviseShirt: function() { return "adviseShirt"; } });
 
     // act
-    let result = sut.getAdvice();
+    let result = sut.buildAdvice();
 
     // assert
     expect(result).to.equal("adviseShirt");
@@ -50,7 +50,7 @@ describe('AttireBuildDirector', function() {
     let sut = new Sut({ adviseJacket: function() { return "adviseJacket"; } });
 
     // act
-    let result = sut.getAdvice();
+    let result = sut.buildAdvice();
 
     // assert
     expect(result).to.equal("adviseJacket");
@@ -62,7 +62,7 @@ describe('AttireBuildDirector', function() {
     let sut = new Sut({ adviseGloves: function() { return "adviseGloves"; } });
 
     // act
-    let result = sut.getAdvice();
+    let result = sut.buildAdvice();
 
     // assert
     expect(result).to.equal("adviseGloves");
@@ -74,7 +74,7 @@ describe('AttireBuildDirector', function() {
     let sut = new Sut({ advisePants: function() { return "advisePants"; } });
 
     // act
-    let result = sut.getAdvice();
+    let result = sut.buildAdvice();
 
     // assert
     expect(result).to.equal("advisePants");
@@ -86,7 +86,7 @@ describe('AttireBuildDirector', function() {
     let sut = new Sut({ adviseSocks: function() { return "adviseSocks"; } });
 
     // act
-    let result = sut.getAdvice();
+    let result = sut.buildAdvice();
 
     // assert
     expect(result).to.equal("adviseSocks");
@@ -98,7 +98,7 @@ describe('AttireBuildDirector', function() {
     let sut = new Sut({ adviseShoes: function() { return "adviseShoes"; } });
 
     // act
-    let result = sut.getAdvice();
+    let result = sut.buildAdvice();
 
     // assert
     expect(result).to.equal("adviseShoes");
@@ -110,7 +110,7 @@ describe('AttireBuildDirector', function() {
     let sut = new Sut({ adviseOvershoes: function() { return "adviseOvershoes"; } });
 
     // act
-    let result = sut.getAdvice();
+    let result = sut.buildAdvice();
 
     // assert
     expect(result).to.equal("adviseOvershoes");
@@ -122,7 +122,7 @@ describe('AttireBuildDirector', function() {
     let sut = new Sut({ adviseArmWarmers: function() { return "adviseArmWarmers"; } });
 
     // act
-    let result = sut.getAdvice();
+    let result = sut.buildAdvice();
 
     // assert
     expect(result).to.equal("adviseArmWarmers");
@@ -134,7 +134,7 @@ describe('AttireBuildDirector', function() {
     let sut = new Sut({ adviseLegWarmers: function() { return "adviseLegWarmers"; } });
 
     // act
-    let result = sut.getAdvice();
+    let result = sut.buildAdvice();
 
     // assert
     expect(result).to.equal("adviseLegWarmers");
@@ -146,7 +146,7 @@ describe('AttireBuildDirector', function() {
     let sut = new Sut({ adviseRainJacket: function() { return "adviseRainJacket"; } });
 
     // act
-    let result = sut.getAdvice();
+    let result = sut.buildAdvice();
 
     // assert
     expect(result).to.equal("adviseRainJacket");
@@ -158,7 +158,7 @@ describe('AttireBuildDirector', function() {
     let sut = new Sut({ adviseGlasses: function() { return "adviseGlasses"; } });
 
     // act
-    let result = sut.getAdvice();
+    let result = sut.buildAdvice();
 
     // assert
     expect(result).to.equal("adviseGlasses");
@@ -185,7 +185,7 @@ describe('AttireBuildDirector', function() {
         });
 
     // act
-    let result = sut.getAdvice();
+    let result = sut.buildAdvice();
 
     // assert
     expect(result).to.equal("1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13");
@@ -212,7 +212,7 @@ describe('AttireBuildDirector', function() {
         });
 
     // act
-    let result = sut.getAdvice();
+    let result = sut.buildAdvice();
 
     // assert
     expect(result).to.equal("1, 5, 6, 8, 9, 11");
@@ -230,7 +230,7 @@ describe('AttireBuildDirector', function() {
         });
 
     // act
-    let result = sut.getAdvice();
+    let result = sut.buildAdvice();
 
     // assert
     expect(result).to.equal("1, 7, 12, 13");

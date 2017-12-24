@@ -17,11 +17,11 @@ module.exports = function attireBuildDirectorModule(builder) {
         glasses: (builder.adviseGlasses || function() {})()
     }
 
-    function getAdvice() {
+    function buildAdvice() {
         return Object.keys(attire).filter(key => { if(attire[key]) return key; }).map(key => attire[key]).join(", ");
     }    
 
     return {
-        getAdvice: getAdvice
+        buildAdvice: buildAdvice
     }
 }

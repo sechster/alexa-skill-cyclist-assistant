@@ -1,4 +1,4 @@
-module.exports = function conditionsModule() {
+module.exports = function conditionsModule(weather, airCondition) {
 
     function getCurrentSeason() {
         
