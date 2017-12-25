@@ -1,67 +1,74 @@
 {
-    "languageModel": {
-      "intents": [
-        {
-          "name": "AMAZON.CancelIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.HelpIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.StopIntent",
-          "samples": []
-        },
-        {
-          "name": "WhatToWearIntent",
-          "samples": [
-            "tell me what to wear for a {distance} kilometer ride",
-            "what should I wear for a {distance} kilometer ride",
-            "what I should wear for a {distance} kilometer ride"
-          ],
-          "slots": [
-            {
-              "name": "distance",
-              "type": "AMAZON.NUMBER",
-              "samples": [
-                "{distance} kilometers"
-              ]
-            }
-          ]
-        }
-      ],
-      "invocationName": "cycling assistant"
-    },
-    "prompts": [
+  "languageModel": {
+    "intents": [
       {
-        "id": "Elicit.Intent-WhatToWearIntent.IntentSlot-distance",
-        "variations": [
+        "name": "AMAZON.CancelIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.HelpIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.StopIntent",
+        "samples": []
+      },
+      {
+        "name": "WhatToWearIntent",
+        "samples": [
+          "tell me what to wear for a {distance} kilometer ride",
+          "what should I wear for a {distance} kilometer ride",
+          "what I should wear for a {distance} kilometer ride",
+          "how should I dress for a {distance} kilometer ride",
+          "how should I dress",
+          "what should I wear",
+          "tell me what to wear",
+          "tell me how to dress",
+          "tell me how to dress for a {distance} kilometer ride",
+          "what I should wear"
+        ],
+        "slots": [
           {
-            "type": "PlainText",
-            "value": "what is the distance?"
+            "name": "distance",
+            "type": "AMAZON.NUMBER",
+            "samples": [
+              "{distance} kilometers"
+            ]
           }
         ]
       }
     ],
-    "dialog": {
-      "intents": [
+    "invocationName": "cycling assistant"
+  },
+  "prompts": [
+    {
+      "id": "Elicit.Intent-WhatToWearIntent.IntentSlot-distance",
+      "variations": [
         {
-          "name": "WhatToWearIntent",
-          "confirmationRequired": false,
-          "prompts": {},
-          "slots": [
-            {
-              "name": "distance",
-              "type": "AMAZON.NUMBER",
-              "elicitationRequired": true,
-              "confirmationRequired": false,
-              "prompts": {
-                "elicitation": "Elicit.Intent-WhatToWearIntent.IntentSlot-distance"
-              }
-            }
-          ]
+          "type": "PlainText",
+          "value": "what is the distance?"
         }
       ]
     }
+  ],
+  "dialog": {
+    "intents": [
+      {
+        "name": "WhatToWearIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "distance",
+            "type": "AMAZON.NUMBER",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-WhatToWearIntent.IntentSlot-distance"
+            }
+          }
+        ]
+      }
+    ]
   }
+}

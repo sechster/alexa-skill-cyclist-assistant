@@ -19,20 +19,24 @@ const handlers = {
         this.emit('WhatToWearIntent');
     },
     'WhatToWearIntent': function () {
-        const attireAdvisor = require("./attireAdvisor");
-        const rideTimeService = require("./services/rideTimeService");
-        const duration = require('./duration');
+        if (!isSlotValid(this.event.request, "distance")) {
+            delegateSlotCollection(this.event, this.emit);
+        } else {
+            const attireAdvisor = require("./attireAdvisor");
+            const rideTimeService = require("./services/rideTimeService");
+            const duration = require('./duration');
 
-        let self = this;
+            let self = this;
 
-        let rideTime = rideTimeService.getRideTimeData(moment().toDate(), this.event.request.intent.slots.distance.value);
-        let durationText = duration.getText(rideTime.startTime, rideTime.endTime);
+            let rideTime = rideTimeService.getRideTimeData(moment().toDate(), this.event.request.intent.slots.distance.value);
+            let durationText = duration.getText(rideTime.startTime, rideTime.endTime);
 
-        attireAdvisor.getAdvice(rideTime)
-            .then(function(advice) { 
-                self.response.speak(`Ride will take: ${durationText}. You should wear: ${advice}`);
-                self.emit(':responseReady');
-            });
+            attireAdvisor.getAdvice(rideTime)
+                .then(function(advice) { 
+                    self.response.speak(`Ride will take: ${durationText}. You should wear: ${advice}`);
+                    self.emit(':responseReady');
+                });
+        }
     },
     'AMAZON.HelpIntent': function () {
         const speechOutput = HELP_MESSAGE;
@@ -50,3 +54,18 @@ const handlers = {
         this.emit(':responseReady');
     },
 };
+
+
+function delegateSlotCollection(event, emit){
+    if (event.request.dialogState === "STARTED") {
+        var updatedIntent = event.request.intent;
+        emit(":delegate", updatedIntent);
+    } else if (event.request.dialogState !== "COMPLETED") {
+        emit(":delegate");
+    }
+}
+
+function isSlotValid(request, slotName){
+    var slot = request.intent.slots[slotName];
+    return (slot && slot.value);
+}
