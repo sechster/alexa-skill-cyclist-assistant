@@ -19,12 +19,15 @@ const handlers = {
     },
     'WhatToWearIntent': function () {
         const attireAdvisor = require("./attireAdvisor");
+        const rideTimeService = require("./services/rideTimeService");
 
         let self = this;
 
+        let rideTime = rideTimeService.getRideTimeData(moment().toDate(), distance);
+
         attireAdvisor.getAdvice(this.event.request.intent.slots.distance.value)
             .then(function(advice) { 
-                self.response.speak(`You should wear: ${advice}`);
+                self.response.speak(`Ride will take: ${ridetime.calculateDuration()} hours. You should wear: ${advice}`);
                 self.emit(':responseReady');
             });
     },

@@ -2,13 +2,10 @@ const moment = require('moment');
 const apixu = require('./externalServices/apixu');
 const weatherService = require("./services/weatherService")(apixu);
 //const airConditionService = require("./airConditionService");
-const rideTimeService = require("./services/rideTimeService");
 const factory = require('./attireBuilderFactory');
 const director = require('./attireBuildDirector');
 
-module.exports.getAdvice = function getAdviceModule(distance) {
-
-    let rideTime = rideTimeService.getRideTimeData(moment().toDate(), distance);
+module.exports.getAdvice = function getAdviceModule(rideTime) {
 
     return weatherService.getWeather(rideTime)
         .then(function(weather) {

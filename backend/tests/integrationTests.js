@@ -1,5 +1,6 @@
 const apixu = require('./../src/externalServices/apixu');
 const attireAdvisor = require('./../src/attireAdvisor');
+const moment = require('moment');
 
 describe('Integration tests', function(){
 
@@ -8,7 +9,7 @@ describe('Integration tests', function(){
     });
 
     it('attireAdvisor', function(){
-        //attireAdvisor.getAdvice().then(function(advice) {console.log(advice)});
+        //attireAdvisor.getAdvice({ startTime: moment().date(), endTime: moment().add(3, 'h').date() }).then(function(advice) {console.log(advice)});
     });
 
 });
