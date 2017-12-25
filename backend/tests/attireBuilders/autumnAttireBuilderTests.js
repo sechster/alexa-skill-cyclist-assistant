@@ -160,11 +160,12 @@ describe('AutumnAttireBuilder', function() {
     expect(result).to.equal("overshoes");
   });
 
-  it('adviseOvershoes_advises_overshoes_when_minimum_temperature_falls_below_4_degrees', function() {
+  it('adviseOvershoes_advises_overshoes_when_minimum_temperature_falls_below_4_degreess_and_it_is_not_going_to_rain', function() {
 
     // arrange
     let conditions = new Conditions();
     sinon.stub(conditions, "getMinimumTemperature").callsFake(function() { return 3 });
+    sinon.stub(conditions, "itMightRain").callsFake(function() { return false });
     let sut = new Sut(conditions);
 
     // act

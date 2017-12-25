@@ -1,17 +1,10 @@
-module.exports = function attireBuilderFactoryModule() {
+const experts = { 
+    summer: require("./attireBuilders/summerAttireBuilder"),
+    spring: require("./attireBuilders/springAttireBuilder"),
+    autumn: require("./attireBuilders/autumnAttireBuilder"),
+    winter: require("./attireBuilders/winterAttireBuilder"),
+} ;
 
-    let experts = { 
-        summer: require("./attireBuilders/summerAttireBuilder"),
-        spring: require("./attireBuilders/springAttireBuilder"),
-        autumn: require("./attireBuilders/autumnAttireBuilder"),
-        winter: require("./attireBuilders/winterAttireBuilder"),
-    } ;
-
-    function create(conditions) {
-        return experts[conditions.getCurrentSeason()](conditions);
-    }
-
-    return {
-        create: create
-    };
+module.exports.create = function createModule(conditions) {
+        return new experts[conditions.getCurrentSeason()](conditions);
 }

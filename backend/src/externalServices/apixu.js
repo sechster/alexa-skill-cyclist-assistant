@@ -6,7 +6,7 @@ module.exports.forecastWeather = function forecastWeather(query, noOfDays) {
 	let options = {
 		uri: 'http://api.apixu.com/v1/forecast.json',
 		qs: {
-			key: config.get('Apixu.ApiKey'),
+			key: config.get('apixu.apiKey'),
 			q: query,
 			days: noOfDays
 		},

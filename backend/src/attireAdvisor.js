@@ -1,26 +1,25 @@
-let moment = require('moment');
+const moment = require('moment');
+const apixu = require('./externalServices/apixu');
+const weatherService = require("./services/weatherService")(apixu);
+//const airConditionService = require("./airConditionService");
+const rideTimeService = require("./services/rideTimeService");
+const factory = require('./attireBuilderFactory');
+const director = require('./attireBuildDirector');
 
-module.exports = function attireAdvisorModule() {
-    
-    function getAdvice() {
-        
-        let weatherService = require("./services/weatherService");
-        let airConditionService = require("./airConditionService");
-        let rideTimeService = require("./services/rideTimeService");
-        let factory = require('./attireBuilderFactory');
+module.exports.getAdvice = function getAdviceModule() {
 
-        let rideTime = rideTimeService.getRideTimeData(moment().toDate());
-        let weather = weatherService.getWeatherForNextHours(rideTime.calculateDuration());
-        let airCondition = airConditionService.getCurrentAirCondition();
-        let conditions = require('./conditions')(weather, airCondition);
-        let expert = factory.create(conditions);
+    let rideTime = rideTimeService.getRideTimeData(moment().toDate());
+    let weather = weatherService.getWeather(rideTime);
+    let airCondition = null; //airConditionService.getCurrentAirCondition();
+    let conditions = require('./conditions')(weather, airCondition);
 
-        let advice = expert.buildAdvice();
-    }
-    
-    let publicApi = {
-        getAdvice: getAdvice
+    if (conditions.itMightSnow())
+    {
+        return "It might snow. Stay home."
     }
 
-    return publicApi;
+    let expert = factory.create(conditions);
+    let advice = director.buildAdvice(expert);
+
+    return advice;
 }

@@ -1,0 +1,17 @@
+{
+    "apixu": {
+        "apiKey": ""
+    },
+    "weather": {
+        "currentCity": "wroclaw",
+        "summerMinTemperatureThreshold": 15,
+        "springMinTemperatureThreshold": 10,
+        "autumnMinTemperatureThreshold": 5,
+        "isCloudyThreshold": 20,
+        "itMightRainThreshold": 40,
+        "itMightSnowThreshold": 40
+    },
+    "rideTime": {
+        "averageSpeed": 25
+    }
+}

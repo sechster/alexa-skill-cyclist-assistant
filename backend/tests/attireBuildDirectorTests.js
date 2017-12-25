@@ -1,20 +1,17 @@
-let chai = require('chai');
-let sinon = require('sinon');
+const chai = require('chai');
+const sinon = require('sinon');
 
-let Sut = require('./../src/attireBuildDirector');
+const sut = require('./../src/attireBuildDirector');
 
-let expect = chai.expect;
+const expect = chai.expect;
 
 
 describe('AttireBuildDirector', function() {
 
   it('If only adviseHeadGear is defined on the expert only its result is returned', function() {
 
-    // arrange
-    let sut = new Sut({ adviseHeadGear: function() { return "adviseHeadGear"; } });
-
     // act
-    let result = sut.buildAdvice();
+    let result = sut.buildAdvice({ adviseHeadGear: function() { return "adviseHeadGear"; } });
 
     // assert
     expect(result).to.equal("adviseHeadGear");
@@ -22,11 +19,8 @@ describe('AttireBuildDirector', function() {
 
   it('If only adviseSmogMask is defined on the expert only its result is returned', function() {
 
-    // arrange
-    let sut = new Sut({ adviseSmogMask: function() { return "adviseSmogMask"; } });
-
     // act
-    let result = sut.buildAdvice();
+    let result = sut.buildAdvice({ adviseSmogMask: function() { return "adviseSmogMask"; } });
 
     // assert
     expect(result).to.equal("adviseSmogMask");
@@ -34,11 +28,8 @@ describe('AttireBuildDirector', function() {
 
   it('If only adviseShirt is defined on the expert only its result is returned', function() {
 
-    // arrange
-    let sut = new Sut({ adviseShirt: function() { return "adviseShirt"; } });
-
     // act
-    let result = sut.buildAdvice();
+    let result = sut.buildAdvice({ adviseShirt: function() { return "adviseShirt"; } });
 
     // assert
     expect(result).to.equal("adviseShirt");
@@ -46,11 +37,8 @@ describe('AttireBuildDirector', function() {
 
   it('If only adviseJacket is defined on the expert only its result is returned', function() {
 
-    // arrange
-    let sut = new Sut({ adviseJacket: function() { return "adviseJacket"; } });
-
     // act
-    let result = sut.buildAdvice();
+    let result = sut.buildAdvice({ adviseJacket: function() { return "adviseJacket"; } });
 
     // assert
     expect(result).to.equal("adviseJacket");
@@ -58,11 +46,8 @@ describe('AttireBuildDirector', function() {
 
   it('If only adviseGloves is defined on the expert only its result is returned', function() {
 
-    // arrange
-    let sut = new Sut({ adviseGloves: function() { return "adviseGloves"; } });
-
     // act
-    let result = sut.buildAdvice();
+    let result = sut.buildAdvice({ adviseGloves: function() { return "adviseGloves"; } });
 
     // assert
     expect(result).to.equal("adviseGloves");
@@ -70,11 +55,8 @@ describe('AttireBuildDirector', function() {
 
   it('If only advisePants is defined on the expert only its result is returned', function() {
 
-    // arrange
-    let sut = new Sut({ advisePants: function() { return "advisePants"; } });
-
     // act
-    let result = sut.buildAdvice();
+    let result = sut.buildAdvice({ advisePants: function() { return "advisePants"; } });
 
     // assert
     expect(result).to.equal("advisePants");
@@ -82,11 +64,8 @@ describe('AttireBuildDirector', function() {
 
   it('If only adviseSocks is defined on the expert only its result is returned', function() {
 
-    // arrange
-    let sut = new Sut({ adviseSocks: function() { return "adviseSocks"; } });
-
     // act
-    let result = sut.buildAdvice();
+    let result = sut.buildAdvice({ adviseSocks: function() { return "adviseSocks"; } });
 
     // assert
     expect(result).to.equal("adviseSocks");
@@ -94,11 +73,8 @@ describe('AttireBuildDirector', function() {
 
   it('If only adviseShoes is defined on the expert only its result is returned', function() {
 
-    // arrange
-    let sut = new Sut({ adviseShoes: function() { return "adviseShoes"; } });
-
     // act
-    let result = sut.buildAdvice();
+    let result = sut.buildAdvice({ adviseShoes: function() { return "adviseShoes"; } });
 
     // assert
     expect(result).to.equal("adviseShoes");
@@ -106,11 +82,8 @@ describe('AttireBuildDirector', function() {
 
   it('If only adviseOvershoes is defined on the expert only its result is returned', function() {
 
-    // arrange
-    let sut = new Sut({ adviseOvershoes: function() { return "adviseOvershoes"; } });
-
     // act
-    let result = sut.buildAdvice();
+    let result = sut.buildAdvice({ adviseOvershoes: function() { return "adviseOvershoes"; } });
 
     // assert
     expect(result).to.equal("adviseOvershoes");
@@ -118,11 +91,8 @@ describe('AttireBuildDirector', function() {
 
   it('If only adviseArmWarmers is defined on the expert only its result is returned', function() {
 
-    // arrange
-    let sut = new Sut({ adviseArmWarmers: function() { return "adviseArmWarmers"; } });
-
     // act
-    let result = sut.buildAdvice();
+    let result = sut.buildAdvice({ adviseArmWarmers: function() { return "adviseArmWarmers"; } });
 
     // assert
     expect(result).to.equal("adviseArmWarmers");
@@ -130,11 +100,8 @@ describe('AttireBuildDirector', function() {
 
   it('If only adviseLegWarmers is defined on the expert only its result is returned', function() {
 
-    // arrange
-    let sut = new Sut({ adviseLegWarmers: function() { return "adviseLegWarmers"; } });
-
     // act
-    let result = sut.buildAdvice();
+    let result = sut.buildAdvice({ adviseLegWarmers: function() { return "adviseLegWarmers"; } });
 
     // assert
     expect(result).to.equal("adviseLegWarmers");
@@ -142,11 +109,8 @@ describe('AttireBuildDirector', function() {
 
   it('If only adviseRainJacket is defined on the expert only its result is returned', function() {
 
-    // arrange
-    let sut = new Sut({ adviseRainJacket: function() { return "adviseRainJacket"; } });
-
     // act
-    let result = sut.buildAdvice();
+    let result = sut.buildAdvice({ adviseRainJacket: function() { return "adviseRainJacket"; } });
 
     // assert
     expect(result).to.equal("adviseRainJacket");
@@ -154,11 +118,8 @@ describe('AttireBuildDirector', function() {
 
   it('If only adviseGlasses is defined on the expert only its result is returned', function() {
 
-    // arrange
-    let sut = new Sut({ adviseGlasses: function() { return "adviseGlasses"; } });
-
     // act
-    let result = sut.buildAdvice();
+    let result = sut.buildAdvice({ adviseGlasses: function() { return "adviseGlasses"; } });
 
     // assert
     expect(result).to.equal("adviseGlasses");
@@ -167,7 +128,7 @@ describe('AttireBuildDirector', function() {
   it('If all functions are defined on the expert, and they all return non empty results, everything is concatenated', function() {
 
     // arrange
-    let sut = new Sut(
+    let expert =
         { 
             adviseHeadGear: function() { return "1"; },
             adviseSmogMask: function() { return "2"; },
@@ -182,10 +143,10 @@ describe('AttireBuildDirector', function() {
             adviseLegWarmers: function() { return "11"; },
             adviseRainJacket: function() { return "12"; },
             adviseGlasses: function() { return "13"; },
-        });
+        };
 
     // act
-    let result = sut.buildAdvice();
+    let result = sut.buildAdvice(expert);
 
     // assert
     expect(result).to.equal("1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13");
@@ -194,7 +155,7 @@ describe('AttireBuildDirector', function() {
   it('If all functions are defined on the expert, and some of them return empty results, they are omitted', function() {
 
     // arrange
-    let sut = new Sut(
+    let expert = 
         { 
             adviseHeadGear: function() { return "1"; },
             adviseSmogMask: function() { return ""; },
@@ -209,10 +170,10 @@ describe('AttireBuildDirector', function() {
             adviseLegWarmers: function() { return "11"; },
             adviseRainJacket: function() { return ""; },
             adviseGlasses: function() { return ""; },
-        });
+        };
 
     // act
-    let result = sut.buildAdvice();
+    let result = sut.buildAdvice(expert);
 
     // assert
     expect(result).to.equal("1, 5, 6, 8, 9, 11");
@@ -221,16 +182,16 @@ describe('AttireBuildDirector', function() {
   it('If some functions are defined on the expert, and they all return non empty results, only those are concatenated', function() {
 
     // arrange
-    let sut = new Sut(
+    let expert = 
         { 
             adviseHeadGear: function() { return "1"; },
             adviseSocks: function() { return "7"; },
             adviseRainJacket: function() { return "12"; },
             adviseGlasses: function() { return "13"; },
-        });
+        };
 
     // act
-    let result = sut.buildAdvice();
+    let result = sut.buildAdvice(expert);
 
     // assert
     expect(result).to.equal("1, 7, 12, 13");

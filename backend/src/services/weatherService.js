@@ -1,9 +1,12 @@
-let moment = require('moment');
+const moment = require('moment');
+const config = require('config');
 
 module.exports = function weatherServiceModule(externalWeatherService) {
 
     function getWeather(timeWindow) {
-        return externalWeatherService.forecastWeather('wroclaw', 1)
+        let currentCity = config.get('weather.currentCity');
+        const daysOfForecast = 1;
+        return externalWeatherService.forecastWeather(currentCity, daysOfForecast)
             .then(function(weatherData) { 
                 let result = {
                     minimumTemperature: weatherData.forecast.forecastday[0].day.mintemp_c,
