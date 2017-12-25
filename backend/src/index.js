@@ -25,10 +25,11 @@ const handlers = {
         let self = this;
 
         let rideTime = rideTimeService.getRideTimeData(moment().toDate(), this.event.request.intent.slots.distance.value);
+        let duration = Math.round(rideTime.calculateDuration() * 100) / 100
 
         attireAdvisor.getAdvice(rideTime)
             .then(function(advice) { 
-                self.response.speak(`Ride will take: ${ridetime.calculateDuration()} hours. You should wear: ${advice}`);
+                self.response.speak(`Ride will take: ${duration} hours. You should wear: ${advice}`);
                 self.emit(':responseReady');
             });
     },
