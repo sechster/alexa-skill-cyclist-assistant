@@ -24,9 +24,9 @@ const handlers = {
 
         let self = this;
 
-        let rideTime = rideTimeService.getRideTimeData(moment().toDate(), distance);
+        let rideTime = rideTimeService.getRideTimeData(moment().toDate(), this.event.request.intent.slots.distance.value);
 
-        attireAdvisor.getAdvice(this.event.request.intent.slots.distance.value)
+        attireAdvisor.getAdvice(rideTime)
             .then(function(advice) { 
                 self.response.speak(`Ride will take: ${ridetime.calculateDuration()} hours. You should wear: ${advice}`);
                 self.emit(':responseReady');
