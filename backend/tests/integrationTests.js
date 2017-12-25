@@ -8,7 +8,7 @@ describe('Integration tests', function(){
     });
 
     it('attireAdvisor', function(){
-        //console.log(attireAdvisor.getAdvice());
+        //attireAdvisor.getAdvice().then(function(advice) {console.log(advice)});
     });
 
 });
