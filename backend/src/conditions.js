@@ -2,9 +2,6 @@ const config = require('config');
 
 module.exports = function conditionsModule(weather, airCondition) {
 
-    this.weather = weather;
-    this.airCondition = airCondition;
-
     function getCurrentSeason() {
         if (weather.minimumTemperature > config.get('weather.summerMinTemperatureThreshold')) {
             return "summer";
@@ -26,7 +23,7 @@ module.exports = function conditionsModule(weather, airCondition) {
     }
 
     function isDark() {
-        return weather.isDark;
+        return weather.hourly.some(x => x.isDark === true);
     }
 
     function isSmoggy() {
@@ -34,11 +31,11 @@ module.exports = function conditionsModule(weather, airCondition) {
     }
 
     function itMightRain() {
-        return (weather.chanceOfRain > config.get('weather.itMightRainThreshold'));
+        return (weather.hourly.some(x => x.chanceOfRain > config.get('weather.itMightRainThreshold')));
     }
 
     function itMightSnow() {
-        return (weather.chanceOfSnow > config.get('weather.itMightSnowThreshold'));
+        return (weather.hourly.some(x => x.chanceOfSnow > config.get('weather.itMightSnowThreshold')));
     }
 
     function getMinimumTemperature() {

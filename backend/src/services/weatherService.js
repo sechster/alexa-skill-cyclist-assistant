@@ -14,7 +14,7 @@ module.exports = function weatherServiceModule(externalWeatherService) {
                     averageTemperature: weatherData.forecast.forecastday[0].day.avgtemp_c,
                     totalPrecipitation: weatherData.forecast.forecastday[0].day.totalprecip_mm,
                     maximumWindSpeed: weatherData.forecast.forecastday[0].day.maxwind_kph,
-                    hourly: new Array()
+                    hourly: new Array(),
                 }
 
                 let hours = weatherData.forecast.forecastday[0].hour;

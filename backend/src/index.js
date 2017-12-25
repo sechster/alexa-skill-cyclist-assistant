@@ -1,7 +1,7 @@
 const Alexa = require('alexa-sdk');
 const moment = require('moment');
 
-const APP_ID = '';
+const APP_ID = 'amzn1.ask.skill.374de5df-752c-47d0-877d-8e3c9ba04790';
 
 const HELP_MESSAGE = 'Just ask: Alexa, ask cycling assistant to tell me what to wear for a 70 kilometer ride';
 const HELP_REPROMPT = 'ok';

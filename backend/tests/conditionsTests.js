@@ -79,10 +79,10 @@ describe('Conditions', function(){
         expect(result).to.be.false;
     });
 
-    it('isDark returns false if it is not dark', function(){
+    it('isDark returns false if it is not dark for the entire ride', function(){
 
         // arrange
-        let sut = new Sut({ isDark: false });
+        let sut = new Sut({ hourly: [ {isDark: false}, {isDark: false} ] });
 
         // act
         let result = sut.isDark();
@@ -91,10 +91,10 @@ describe('Conditions', function(){
         expect(result).to.be.false;
     });
 
-    it('isDark returns true if it is dark', function(){
+    it('isDark returns true if it is dark at any moment of the ride', function(){
 
         // arrange
-        let sut = new Sut({ isDark: true });
+        let sut = new Sut({ hourly: [ {isDark: false}, {isDark: true} ] });
 
         // act
         let result = sut.isDark();
@@ -103,10 +103,11 @@ describe('Conditions', function(){
         expect(result).to.be.true;
     });
 
-    it('itMightRain returns true above configured threshold', function(){
+    it('itMightRain returns true if any hour is above configured threshold', function(){
 
         // arrange
-        let sut = new Sut({ chanceOfRain: config.get('weather.itMightRainThreshold') + 1 });
+        let chance = config.get('weather.itMightRainThreshold') - 1;
+        let sut = new Sut({ hourly: [ {chanceOfRain: chance}, {chanceOfRain: chance + 2}, {chanceOfRain: chance} ] });
 
         // act
         let result = sut.itMightRain();
@@ -115,10 +116,11 @@ describe('Conditions', function(){
         expect(result).to.be.true;
     });
 
-    it('itMightRain returns false below configured threshold', function(){
+    it('itMightRain returns false if every hour is below configured threshold', function(){
 
         // arrange
-        let sut = new Sut({ chanceOfRain: config.get('weather.itMightRainThreshold') - 1 });
+        let chance = config.get('weather.itMightRainThreshold') - 1;
+        let sut = new Sut({ hourly: [ {chanceOfRain: chance}, {chanceOfRain: chance}, {chanceOfRain: chance} ] });
 
         // act
         let result = sut.itMightRain();
@@ -127,10 +129,11 @@ describe('Conditions', function(){
         expect(result).to.be.false;
     });
 
-    it('itMightSnow returns true above configured threshold', function(){
+    it('itMightSnow returns true if any hour is above configured threshold', function(){
 
         // arrange
-        let sut = new Sut({ chanceOfSnow: config.get('weather.itMightSnowThreshold') + 1 });
+        let chance = config.get('weather.itMightSnowThreshold') - 1;
+        let sut = new Sut({ hourly: [ {chanceOfSnow: chance}, {chanceOfSnow: chance + 2}, {chanceOfSnow: chance} ] });
 
         // act
         let result = sut.itMightSnow();
@@ -139,10 +142,11 @@ describe('Conditions', function(){
         expect(result).to.be.true;
     });
 
-    it('itMightSnow returns false below configured threshold', function(){
+    it('itMightSnow returns false if every hour is below configured threshold', function(){
 
         // arrange
-        let sut = new Sut({ chanceOfSnow: config.get('weather.itMightSnowThreshold') - 1 });
+        let chance = config.get('weather.itMightSnowThreshold') - 1;
+        let sut = new Sut({ hourly: [ {chanceOfSnow: chance}, {chanceOfSnow: chance}, {chanceOfSnow: chance} ] });
 
         // act
         let result = sut.itMightSnow();

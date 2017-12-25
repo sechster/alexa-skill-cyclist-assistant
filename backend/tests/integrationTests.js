@@ -9,7 +9,7 @@ describe('Integration tests', function(){
     });
 
     it('attireAdvisor', function(){
-        //attireAdvisor.getAdvice({ startTime: moment().date(), endTime: moment().add(3, 'h').date() }).then(function(advice) {console.log(advice)});
+        //attireAdvisor.getAdvice({ startTime: moment().toDate(), endTime: moment().add(3, 'h').toDate() }).then(function(advice) {console.log(advice)});
     });
 
 });
