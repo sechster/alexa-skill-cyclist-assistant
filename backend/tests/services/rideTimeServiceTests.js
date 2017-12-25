@@ -68,18 +68,4 @@ describe('RideTimeService', function() {
     // assert
     expect(result.endTime).to.equalTime(endTime);
   });
-
-  it('calculateDuration should return 10,45 (10:27) on a 203km ride', function() {
-
-    // arrange
-    let now = moment().toDate();
-    let rideDistance = 203;
-    let endTime = moment(now).add(487.2, 'm').add(80, 'm').add(60, 'm').toDate();
-
-    // act
-    let result = sut.getRideTimeData(now, rideDistance);
-
-    // assert
-    expect(result.calculateDuration()).to.equal(10.45);
-  });
 });

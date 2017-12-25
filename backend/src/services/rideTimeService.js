@@ -1,14 +1,8 @@
 let moment = require('moment');
+let config = require('config');
 
-const averageSpeed = 25; // km/h
+const averageSpeed = config.get("rideTime.averageSpeed"); // km/h
 
-function calculateDuration() {
-    let timeSpan = moment.utc(moment(this.endTime).diff(moment(this.startTime)))
-    let hours = timeSpan.hours();
-    let minutes = timeSpan.minutes();
-
-    return hours + minutes/60;
-}
 
 module.exports.getRideTimeData = function getRideTimeDataModule(now, rideDistance) {
 
@@ -25,6 +19,5 @@ module.exports.getRideTimeData = function getRideTimeDataModule(now, rideDistanc
     return {
         startTime: now,
         endTime: endTime.toDate(),
-        calculateDuration: calculateDuration
     }
 }
