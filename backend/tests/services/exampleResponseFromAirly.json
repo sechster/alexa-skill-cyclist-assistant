@@ -1,0 +1,22 @@
+{
+    "airQualityIndex": 45.25866666666666,
+    "pm25": 27.155199999999997,
+    "pm10": 42.072,
+    "distance": 6456.673480786973,
+    "id": 2141,
+    "name": "Aviva",
+    "vendor": "Airly",
+    "location": {
+      "latitude": 51.127036999999994,
+      "longitude": 16.97849
+    },
+    "pollutionLevel": 2,
+    "address": {
+      "streetNumber": "",
+      "route": "Lotnicza 12",
+      "locality": "Wrocław",
+      "country": "Poland"
+    },
+    "measurementTime": "2017-12-26T15:41:34.106Z"
+  }
+  

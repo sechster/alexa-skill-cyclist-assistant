@@ -27,7 +27,7 @@ module.exports = function conditionsModule(weather, airCondition) {
     }
 
     function isSmoggy() {
-        return false;
+        return airCondition.caqiLevel > 90;
     }
 
     function itMightRain() {

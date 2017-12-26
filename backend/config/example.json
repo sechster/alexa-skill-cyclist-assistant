@@ -2,6 +2,13 @@
     "apixu": {
         "apiKey": ""
     },
+    "airly": {
+        "apiKey": ""
+    },
+    "airCondition": {
+        "latitude": "51.087253",
+        "longitude": "16.911126"
+    },
     "weather": {
         "currentCity": "wroclaw",
         "summerMinTemperatureThreshold": 15,

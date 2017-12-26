@@ -179,4 +179,28 @@ describe('Conditions', function(){
         expect(result).to.equal(-223);
     });
 
+    it('isSmoggy returns true if CAQI is greater than 90', function(){
+
+        // arrange
+        let sut = new Sut({}, { caqiLevel: 91 });
+
+        // act
+        let result = sut.isSmoggy();
+
+        // assert
+        expect(result).to.be.true;
+    });
+
+    it('isSmoggy returns false if CAQI is less than 90', function(){
+
+        // arrange
+        let sut = new Sut({}, { caqiLevel: 89 });
+
+        // act
+        let result = sut.isSmoggy();
+
+        // assert
+        expect(result).to.be.false;
+    });
+
 });
