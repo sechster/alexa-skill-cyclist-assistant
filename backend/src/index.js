@@ -3,9 +3,8 @@ const moment = require('moment');
 
 const APP_ID = 'amzn1.ask.skill.374de5df-752c-47d0-877d-8e3c9ba04790';
 
-const HELP_MESSAGE = 'Just ask: Alexa, ask cycling assistant to tell me what to wear for a 70 kilometer ride';
-const HELP_REPROMPT = 'ok';
-const STOP_MESSAGE = 'Goodbye!';
+const HELP_MESSAGE = 'Just say: Alexa, ask the quartermaster to tell me what to wear for a 70 kilometer ride.';
+const STOP_MESSAGE = 'Bye!';
 
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
@@ -17,6 +16,11 @@ exports.handler = function(event, context, callback) {
 const handlers = {
     'LaunchRequest': function () {
         this.emit('WhatToWearIntent');
+    },
+    'Unhandled': function() {
+        console.log("Cycling assistant - Unhandled");
+        this.response.speak("I do not know what you are saying double o seven");
+        this.emit(':ask', 'There was an error. Check the logs.');
     },
     'WhatToWearIntent': function () {
         if (!isSlotValid(this.event.request, "distance")) {
@@ -33,16 +37,15 @@ const handlers = {
 
             attireAdvisor.getAdvice(rideTime)
                 .then(function(advice) { 
-                    self.response.speak(`Ride will take: ${durationText}. You should wear: ${advice}`);
+                    self.response.speak(`Ride will take: ${durationText}. ${advice}`);
                     self.emit(':responseReady');
                 });
         }
     },
     'AMAZON.HelpIntent': function () {
         const speechOutput = HELP_MESSAGE;
-        const reprompt = HELP_REPROMPT;
 
-        this.response.speak(speechOutput).listen(reprompt);
+        this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'AMAZON.CancelIntent': function () {
@@ -55,7 +58,6 @@ const handlers = {
     },
 };
 
-
 function delegateSlotCollection(event, emit){
     if (event.request.dialogState === "STARTED") {
         var updatedIntent = event.request.intent;
@@ -66,6 +68,9 @@ function delegateSlotCollection(event, emit){
 }
 
 function isSlotValid(request, slotName){
-    var slot = request.intent.slots[slotName];
-    return (slot && slot.value);
+    return (
+        request.intent 
+            && request.intent.slots 
+            && request.intent.slots[slotName] 
+            && request.intent.slots[slotName].value);
 }

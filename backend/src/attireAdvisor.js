@@ -14,12 +14,12 @@ module.exports.getAdvice = function getAdviceModule(rideTime) {
             
             if (conditions.itMightSnow())
             {
-                return "It might snow. Stay home."
+                return "It might snow! You should stay home!"
             }
         
             let expert = factory.create(conditions);
             let advice = director.buildAdvice(expert);
 
-            return advice;
+            return `You should wear: ${advice}`;
         });
 }
