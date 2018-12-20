@@ -1,12 +1,11 @@
-const moment = require('moment');
-const apixu = require('./externalServices/apixu');
+const darksky = require('./externalServices/darksky');
 const airly = require('./externalServices/airly');
-const weatherService = require("./services/weatherService")(apixu);
+const weatherService = require("./services/weatherService")(darksky);
 const airConditionService = require("./services/airConditionService")(airly);
 const factory = require('./attireBuilderFactory');
 const director = require('./attireBuildDirector');
 
-module.exports.getAdvice = function getAdviceModule(rideTime) {
+module.exports.getAttireSet = function getAttireSetModule(rideTime) {
     return weatherService.getWeather(rideTime)
         .then(function(weather) {
             let airCondition = airConditionService.getCurrentAirCondition();
@@ -18,8 +17,8 @@ module.exports.getAdvice = function getAdviceModule(rideTime) {
             }
         
             let expert = factory.create(conditions);
-            let advice = director.buildAdvice(expert);
+            let attireSet = director.buildAttireSet(expert);
 
-            return `You should wear: ${advice}`;
+            return attireSet;
         });
 }

@@ -4,9 +4,9 @@ chai.use(chaiAsPromised);
 let expect = chai.expect;
 
 let sinon = require('sinon');
-let apixu = require('./../../src/externalServices/apixu');
+let darksky = require('./../../src/externalServices/darksky');
 
-let exampleApixuForecastResponse = require('./exampleResponseFromApixu.json');
+let exampleDarkSkyForecastResponse = require('./exampleResponseFromDarkSky.json');
 
 let Sut = require('./../../src/services/weatherService');
 
@@ -15,43 +15,35 @@ describe('WeatherService', function(){
     it('getWeatherForNextHours', function(){
 
         // arrange
-        sinon.stub(apixu, 'forecastWeather').callsFake(function() {
-            return new Promise((resolve, reject) => { return resolve(exampleApixuForecastResponse) });
+        sinon.stub(darksky, 'forecastWeather').callsFake(function() {
+            return new Promise((resolve, reject) => { return resolve(exampleDarkSkyForecastResponse) });
         });
-        let startTime = new Date(2017, 11, 24, 15, 0, 0, 0);
-        let endTime = new Date(2017, 11, 24, 16, 0, 0, 0);
+        let startTime = new Date(2018, 11, 20, 16, 0, 0, 0);
+        let endTime = new Date(2018, 11, 20, 17, 0, 0, 0);
 
-        let sut = new Sut(apixu);
+        let sut = new Sut(darksky);
 
         // act & assert
         expect(sut.getWeather({ startTime: startTime, endTime: endTime })).to.eventually.deep.equal({
-            'minimumTemperature': 6.7,
-            'maximumTemperature': 9.7,
-            'averageTemperature': 9.3,
-            'totalPrecipitation': 0.5,
-            'maximumWindSpeed': 34.9,
+            'minimumTemperature': 1.17,
+            'maximumTemperature': 2.01,
+            'averageTemperature': 1.5899999999999999,
             'hourly' : [
                 {
-                    'time': "2017-12-24 15:00",
-                    'temperature': 9.5,
-                    'isDark': false,
-                    'windSpeed': 28.8,
-                    'precipitation': 0.1,
-                    'cloudiness': 91,
-                    'feltTemperature': 6.0,
-                    'chanceOfRain': "40",
-                    'chanceOfSnow': "0"
+                    'time': "2018-12-20 16:00",
+                    'temperature': 1.15,
+                    'isDark': true,
+                    'cloudiness': 79,
+                    'chanceOfRain': 0,
+                    'chanceOfSnow': 22
                 },
                 {
-                    'time': "2017-12-24 16:00",
-                    'temperature': 9.4,
+                    'time': "2018-12-20 17:00",
+                    'temperature': 1.07,
                     'isDark': true,
-                    'windSpeed': 27.4,
-                    'precipitation': 0.1,
-                    'cloudiness': 86,
-                    'feltTemperature': 6.0,
-                    'chanceOfRain': "60",
-                    'chanceOfSnow': "0"
+                    'cloudiness': 88,
+                    'chanceOfRain': 0,
+                    'chanceOfSnow': 20
                 },
             ]
          });

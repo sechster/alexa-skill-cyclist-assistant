@@ -2,21 +2,24 @@
     "apixu": {
         "apiKey": ""
     },
+    "darksky": {
+        "apiKey": ""
+    },
     "airly": {
         "apiKey": ""
     },
-    "airCondition": {
-        "latitude": "51.087253",
-        "longitude": "16.911126"
-    },
     "weather": {
-        "currentCity": "wroclaw",
         "summerMinTemperatureThreshold": 15,
         "springMinTemperatureThreshold": 10,
         "autumnMinTemperatureThreshold": 5,
         "isCloudyThreshold": 20,
         "itMightRainThreshold": 40,
         "itMightSnowThreshold": 40
+    },
+    "location": {
+        "currentCity": "wroclaw",
+        "latitude": "51.087253",
+        "longitude": "16.911126"
     },
     "rideTime": {
         "averageSpeed": 25

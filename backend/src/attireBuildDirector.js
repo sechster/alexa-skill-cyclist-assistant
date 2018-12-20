@@ -1,5 +1,5 @@
 // builder pattern - director module
-module.exports.buildAdvice = function buildAdviceModule(builder) {
+module.exports.buildAttireSet = function buildAttireSetModule(builder) {
 
     const attire = {
         headGear: (builder.adviseHeadGear || function() {})(),
@@ -17,5 +17,5 @@ module.exports.buildAdvice = function buildAdviceModule(builder) {
         glasses: (builder.adviseGlasses || function() {})()
     }
 
-    return Object.keys(attire).filter(key => { if(attire[key]) return key; }).map(key => attire[key]).join(", ");
+    return Object.keys(attire).filter(key => { if(attire[key]) return key; }).map(key => attire[key]);
 }
