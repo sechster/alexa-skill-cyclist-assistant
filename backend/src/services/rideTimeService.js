@@ -9,11 +9,15 @@ module.exports.getRideTimeData = function getRideTimeDataModule(now, rideDistanc
     let endTime = moment(now).add(rideDistance * 60 / averageSpeed, 'm');
 
     if (rideDistance > averageSpeed) {
-        endTime = endTime.add(Math.floor(rideDistance / averageSpeed) * 10, 'm');
+        let hoursOfRiding = Math.floor(rideDistance / averageSpeed);
+        const shortBrakeInMinutes = 10;
+        endTime = endTime.add(hoursOfRiding * shortBrakeInMinutes, 'm');
     }
 
     if (rideDistance > 100) {
-        endTime = endTime.add(Math.floor(rideDistance / 100) * 30, 'm');
+        let numberOfHundrets = Math.floor(rideDistance / 100);
+        const longBrakeInMinutes = 30;
+        endTime = endTime.add(numberOfHundrets * longBrakeInMinutes, 'm');
     }
 
     return {

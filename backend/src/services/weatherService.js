@@ -9,7 +9,6 @@ module.exports = function weatherServiceModule(externalWeatherService) {
         
         return externalWeatherService.forecastWeather(latitude, longitude)
             .then(function(weatherData) { 
-                //console.log(weatherData);
                 let result = {
                     minimumTemperature: weatherData.daily.data[0].temperatureLow,
                     maximumTemperature: weatherData.daily.data[0].temperatureHigh,
