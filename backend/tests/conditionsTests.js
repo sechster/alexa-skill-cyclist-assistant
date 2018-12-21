@@ -58,7 +58,7 @@ describe('Conditions', function(){
     it('isCloudy returns true above configured threshold', function(){
 
         // arrange
-        let sut = new Sut({ cloudiness: config.get('weather.isCloudyThreshold') + 1 });
+        let sut = new Sut({ hourly: [{cloudiness: config.get('weather.isCloudyThreshold') + 1 }]});
 
         // act
         let result = sut.isCloudy();
@@ -70,7 +70,7 @@ describe('Conditions', function(){
     it('isCloudy returns false below configured threshold', function(){
 
         // arrange
-        let sut = new Sut({ cloudiness: config.get('weather.isCloudyThreshold') - 1 });
+        let sut = new Sut({ hourly: [{cloudiness: config.get('weather.isCloudyThreshold') - 1 }]});
 
         // act
         let result = sut.isCloudy();
@@ -179,10 +179,10 @@ describe('Conditions', function(){
         expect(result).to.equal(-223);
     });
 
-    it('isSmoggy returns true if CAQI is greater than 90', function(){
+    it('isSmoggy returns true if CAQI is greater than 50', function(){
 
         // arrange
-        let sut = new Sut({}, { caqiLevel: 91 });
+        let sut = new Sut({}, { caqiLevel: 51 });
 
         // act
         let result = sut.isSmoggy();
@@ -191,10 +191,10 @@ describe('Conditions', function(){
         expect(result).to.be.true;
     });
 
-    it('isSmoggy returns false if CAQI is less than 90', function(){
+    it('isSmoggy returns false if CAQI is less than 50', function(){
 
         // arrange
-        let sut = new Sut({}, { caqiLevel: 89 });
+        let sut = new Sut({}, { caqiLevel: 49 });
 
         // act
         let result = sut.isSmoggy();

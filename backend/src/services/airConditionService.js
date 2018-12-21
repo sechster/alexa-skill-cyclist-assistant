@@ -9,7 +9,7 @@ module.exports = function airConditionService(externalAirConditionService) {
         return externalAirConditionService.getMeasurement(latitude, longitude)
             .then(function(airConditionData) { 
                 let result = {
-                    caqiLevel: airConditionData.airQualityIndex,
+                    caqiLevel: airConditionData.current.indexes.filter(index => index.name == "AIRLY_CAQI")[0].value,
                 }
         
                 return result;

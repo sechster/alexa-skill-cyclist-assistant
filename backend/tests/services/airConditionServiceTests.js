@@ -23,7 +23,7 @@ describe('AirConditionService', function(){
 
         // act & assert
         expect(sut.getCurrentAirCondition()).to.eventually.deep.equal({
-            'caqiLevel': 45.25866666666666,
+            'caqiLevel': 85.44,
          });
     });
 });

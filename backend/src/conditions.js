@@ -19,7 +19,7 @@ module.exports = function conditionsModule(weather, airCondition) {
     }
 
     function isCloudy() {
-        return (weather.cloudiness > config.get('weather.isCloudyThreshold'));
+        return (weather.hourly.some(x => x.cloudiness > config.get('weather.isCloudyThreshold')));
     }
 
     function isDark() {
@@ -27,7 +27,7 @@ module.exports = function conditionsModule(weather, airCondition) {
     }
 
     function isSmoggy() {
-        return airCondition.caqiLevel > 90;
+        return airCondition.caqiLevel > 50;
     }
 
     function itMightRain() {

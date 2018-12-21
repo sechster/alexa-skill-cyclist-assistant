@@ -4,11 +4,11 @@ const rp = require('request-promise');
 module.exports.getMeasurement = function getMeasurement(latitude, longitude) {
 
 	let options = {
-		uri: 'https://airapi.airly.eu/v1/nearestSensor/measurements',
+		uri: 'https://airapi.airly.eu/v2/measurements/nearest',
 		qs: {
-			latitude: latitude,
-			longitude: longitude,
-			maxDistance: 10000
+			lat: latitude,
+			lng: longitude,
+			maxDistanceKM: 200
 		},
 		headers: {
 			apikey: config.get('airly.apiKey')

@@ -1,22 +1,2268 @@
 {
-    "airQualityIndex": 45.25866666666666,
-    "pm25": 27.155199999999997,
-    "pm10": 42.072,
-    "distance": 6456.673480786973,
-    "id": 2141,
-    "name": "Aviva",
-    "vendor": "Airly",
-    "location": {
-      "latitude": 51.127036999999994,
-      "longitude": 16.97849
-    },
-    "pollutionLevel": 2,
-    "address": {
-      "streetNumber": "",
-      "route": "Lotnicza 12",
-      "locality": "Wrocław",
-      "country": "Poland"
-    },
-    "measurementTime": "2017-12-26T15:41:34.106Z"
-  }
-  
+  "current": {
+      "fromDateTime": "2018-12-20T19:56:08.918Z",
+      "tillDateTime": "2018-12-20T20:56:08.918Z",
+      "values": [
+          {
+              "name": "PM1",
+              "value": 52.08
+          },
+          {
+              "name": "PM25",
+              "value": 77.97
+          },
+          {
+              "name": "PM10",
+              "value": 123.32
+          },
+          {
+              "name": "PRESSURE",
+              "value": 1019.58
+          },
+          {
+              "name": "HUMIDITY",
+              "value": 88.01
+          },
+          {
+              "name": "TEMPERATURE",
+              "value": 0.38
+          }
+      ],
+      "indexes": [
+          {
+              "name": "AIRLY_CAQI",
+              "value": 85.44,
+              "level": "HIGH",
+              "description": "Poor air quality!",
+              "advice": "Avoid being outside if possible.",
+              "color": "#EF7120"
+          }
+      ], 
+      "standards": [
+          {
+              "name": "WHO",
+              "pollutant": "PM25",
+              "limit": 25,
+              "percent": 311.86
+          },
+          {
+              "name": "WHO",
+              "pollutant": "PM10",
+              "limit": 50,
+              "percent": 246.64
+          }
+      ]
+  },
+  "history": [
+      {
+          "fromDateTime": "2018-12-19T20:00:00Z",
+          "tillDateTime": "2018-12-19T21:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 38.08
+              },
+              {
+                  "name": "PM25",
+                  "value": 58.14
+              },
+              {
+                  "name": "PM10",
+                  "value": 103.72
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1022.13
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 88.02
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -4.7
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 78.81,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "This isn't a day for a walk with the kids! :(",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 232.55
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 207.44
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-19T21:00:00Z",
+          "tillDateTime": "2018-12-19T22:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 35.85
+              },
+              {
+                  "name": "PM25",
+                  "value": 55.03
+              },
+              {
+                  "name": "PM10",
+                  "value": 100.66
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1021.96
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 92.5
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -4.86
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 77.96,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Careful! Dust is hanging over the city.",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 220.12
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 201.31
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-19T22:00:00Z",
+          "tillDateTime": "2018-12-19T23:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 41.54
+              },
+              {
+                  "name": "PM25",
+                  "value": 62.73
+              },
+              {
+                  "name": "PM10",
+                  "value": 108.23
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1021.69
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 92.5
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -4.87
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 80.06,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Don't go out, unless you want to breathe like Darth Vader!",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 250.93
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 216.46
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-19T23:00:00Z",
+          "tillDateTime": "2018-12-20T00:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 42.66
+              },
+              {
+                  "name": "PM25",
+                  "value": 64.09
+              },
+              {
+                  "name": "PM10",
+                  "value": 109.15
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1021.46
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 88.42
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -4.76
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 80.32,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Careful! Dust is hanging over the city.",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 256.36
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 218.29
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T00:00:00Z",
+          "tillDateTime": "2018-12-20T01:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 42.53
+              },
+              {
+                  "name": "PM25",
+                  "value": 64.14
+              },
+              {
+                  "name": "PM10",
+                  "value": 110.27
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1021.06
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 87.54
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -4.87
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 80.63,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Taking long walks on a day like today isn't advisable.",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 256.56
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 220.54
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T01:00:00Z",
+          "tillDateTime": "2018-12-20T02:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 40.28
+              },
+              {
+                  "name": "PM25",
+                  "value": 61.05
+              },
+              {
+                  "name": "PM10",
+                  "value": 107.53
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1021.06
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 89.38
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -4.89
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 79.87,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "This isn't a day for a walk with the kids! :(",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 244.2
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 215.05
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T02:00:00Z",
+          "tillDateTime": "2018-12-20T03:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 38.42
+              },
+              {
+                  "name": "PM25",
+                  "value": 58.67
+              },
+              {
+                  "name": "PM10",
+                  "value": 105.85
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1020.55
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 91.75
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -4.97
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 79.4,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "This isn't a day for a walk with the kids! :(",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 234.69
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 211.7
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T03:00:00Z",
+          "tillDateTime": "2018-12-20T04:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 35.84
+              },
+              {
+                  "name": "PM25",
+                  "value": 55.56
+              },
+              {
+                  "name": "PM10",
+                  "value": 102.52
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1020.17
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 91.75
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -4.86
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 78.48,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Avoid being outside if possible.",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 222.25
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 205.04
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T04:00:00Z",
+          "tillDateTime": "2018-12-20T05:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 33.81
+              },
+              {
+                  "name": "PM25",
+                  "value": 52.57
+              },
+              {
+                  "name": "PM10",
+                  "value": 97.13
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1019.93
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 91.2
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -4.66
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 76.98,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Avoid being outside if possible.",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 210.26
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 194.27
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T05:00:00Z",
+          "tillDateTime": "2018-12-20T06:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 33.57
+              },
+              {
+                  "name": "PM25",
+                  "value": 52.46
+              },
+              {
+                  "name": "PM10",
+                  "value": 97.19
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1019.81
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 88.8
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -4.41
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 77,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Taking long walks on a day like today isn't advisable.",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 209.83
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 194.37
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T06:00:00Z",
+          "tillDateTime": "2018-12-20T07:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 33.57
+              },
+              {
+                  "name": "PM25",
+                  "value": 52.18
+              },
+              {
+                  "name": "PM10",
+                  "value": 97.26
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1020.02
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 85.8
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -4.27
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 77.02,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Leave the car - trains, trams and buses are cool too!",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 208.73
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 194.51
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T07:00:00Z",
+          "tillDateTime": "2018-12-20T08:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 34.85
+              },
+              {
+                  "name": "PM25",
+                  "value": 53.72
+              },
+              {
+                  "name": "PM10",
+                  "value": 98.26
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1020.09
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 86.64
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -3.53
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 77.3,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Don't go out, unless you want to breathe like Darth Vader!",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 214.86
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 196.52
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T08:00:00Z",
+          "tillDateTime": "2018-12-20T09:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 34.77
+              },
+              {
+                  "name": "PM25",
+                  "value": 53.36
+              },
+              {
+                  "name": "PM10",
+                  "value": 98.59
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1020
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 87.14
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -2.67
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 77.39,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Leave the car - trains, trams and buses are cool too!",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 213.43
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 197.19
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T09:00:00Z",
+          "tillDateTime": "2018-12-20T10:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 37.04
+              },
+              {
+                  "name": "PM25",
+                  "value": 56.37
+              },
+              {
+                  "name": "PM10",
+                  "value": 101.79
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1019.57
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 90.51
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -2.48
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 78.28,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Careful! Dust is hanging over the city.",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 225.5
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 203.59
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T10:00:00Z",
+          "tillDateTime": "2018-12-20T11:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 33.98
+              },
+              {
+                  "name": "PM25",
+                  "value": 52.73
+              },
+              {
+                  "name": "PM10",
+                  "value": 96.88
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1018.81
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 91.2
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -2.29
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 76.91,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Dust particles are suspended in the air. Watch out!",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 210.92
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 193.77
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T11:00:00Z",
+          "tillDateTime": "2018-12-20T12:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 34.01
+              },
+              {
+                  "name": "PM25",
+                  "value": 52.08
+              },
+              {
+                  "name": "PM10",
+                  "value": 95.57
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1018.56
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 91
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -1.34
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 76.55,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Dust particles are suspended in the air. Watch out!",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 208.33
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 191.15
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T12:00:00Z",
+          "tillDateTime": "2018-12-20T13:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 32.49
+              },
+              {
+                  "name": "PM25",
+                  "value": 50.23
+              },
+              {
+                  "name": "PM10",
+                  "value": 93
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1017.89
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 90.46
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -1.2
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 75.83,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Instead of running outdoors, how about a treadmill instead?.",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 200.92
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 186.01
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T13:00:00Z",
+          "tillDateTime": "2018-12-20T14:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 29.57
+              },
+              {
+                  "name": "PM25",
+                  "value": 46.57
+              },
+              {
+                  "name": "PM10",
+                  "value": 86.89
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1018.1
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 90.78
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -0.79
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 73.06,
+                  "level": "MEDIUM",
+                  "description": "Well... It's been better.",
+                  "advice": "Neither good nor bad. Think before leaving the house.",
+                  "color": "#EFBB0F"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 186.29
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 173.79
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T14:00:00Z",
+          "tillDateTime": "2018-12-20T15:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 37.96
+              },
+              {
+                  "name": "PM25",
+                  "value": 57.65
+              },
+              {
+                  "name": "PM10",
+                  "value": 100.37
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1018.61
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 90.48
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -0.61
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 77.88,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "This isn't a day for a walk with the kids! :(",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 230.62
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 200.75
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T15:00:00Z",
+          "tillDateTime": "2018-12-20T16:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 40.24
+              },
+              {
+                  "name": "PM25",
+                  "value": 60.7
+              },
+              {
+                  "name": "PM10",
+                  "value": 102.23
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1018.96
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 87.67
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -0.26
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 78.4,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Don't go out, unless you want to breathe like Darth Vader!",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 242.81
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 204.45
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T16:00:00Z",
+          "tillDateTime": "2018-12-20T17:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 50.98
+              },
+              {
+                  "name": "PM25",
+                  "value": 76.33
+              },
+              {
+                  "name": "PM10",
+                  "value": 120.82
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1019.17
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 86.5
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -0.25
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 84.7,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "This isn't a day for a walk with the kids! :(",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 305.34
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 241.63
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T17:00:00Z",
+          "tillDateTime": "2018-12-20T18:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 56.34
+              },
+              {
+                  "name": "PM25",
+                  "value": 83.42
+              },
+              {
+                  "name": "PM10",
+                  "value": 129.79
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1019.13
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 86.5
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": -0.13
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 87.92,
+                  "level": "VERY_HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Attention! Avoid breathing outdoors!",
+                  "color": "#EF2A36"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 333.67
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 259.58
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T18:00:00Z",
+          "tillDateTime": "2018-12-20T19:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 52.04
+              },
+              {
+                  "name": "PM25",
+                  "value": 77.58
+              },
+              {
+                  "name": "PM10",
+                  "value": 121.79
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1019.27
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 87.02
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": 0.06
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 85.26,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Dust particles are suspended in the air. Watch out!",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 310.33
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 243.58
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T19:00:00Z",
+          "tillDateTime": "2018-12-20T20:00:00Z",
+          "values": [
+              {
+                  "name": "PM1",
+                  "value": 56.63
+              },
+              {
+                  "name": "PM25",
+                  "value": 84.52
+              },
+              {
+                  "name": "PM10",
+                  "value": 132.16
+              },
+              {
+                  "name": "PRESSURE",
+                  "value": 1019.48
+              },
+              {
+                  "name": "HUMIDITY",
+                  "value": 87.25
+              },
+              {
+                  "name": "TEMPERATURE",
+                  "value": 0.2
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 88.42,
+                  "level": "VERY_HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "It's better to take a walk another day. :(",
+                  "color": "#EF2A36"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 338.1
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 264.31
+              }
+          ]
+      }
+  ],
+  "forecast": [
+      {
+          "fromDateTime": "2018-12-20T20:00:00Z",
+          "tillDateTime": "2018-12-20T21:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 82.2
+              },
+              {
+                  "name": "PM10",
+                  "value": 128.89
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 87.36,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Leave the car - trains, trams and buses are cool too!",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 328.79
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 257.77
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T21:00:00Z",
+          "tillDateTime": "2018-12-20T22:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 80.39
+              },
+              {
+                  "name": "PM10",
+                  "value": 125.87
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 86.54,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Taking long walks on a day like today isn't advisable.",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 321.57
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 251.75
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T22:00:00Z",
+          "tillDateTime": "2018-12-20T23:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 78.44
+              },
+              {
+                  "name": "PM10",
+                  "value": 122.9
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 85.65,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Define the air quality in one word? NOT GOOD. Ok, two words ;)",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 313.75
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 245.8
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-20T23:00:00Z",
+          "tillDateTime": "2018-12-21T00:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 76.15
+              },
+              {
+                  "name": "PM10",
+                  "value": 119.51
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 84.61,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "It's not good, oh no!",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 304.6
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 239.03
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-21T00:00:00Z",
+          "tillDateTime": "2018-12-21T01:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 73.57
+              },
+              {
+                  "name": "PM10",
+                  "value": 116.07
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 83.44,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Instead of running outdoors, how about a treadmill instead?.",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 294.27
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 232.14
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-21T01:00:00Z",
+          "tillDateTime": "2018-12-21T02:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 71.01
+              },
+              {
+                  "name": "PM10",
+                  "value": 112.63
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 82.28,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Careful! Dust is hanging over the city.",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 284.06
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 225.27
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-21T02:00:00Z",
+          "tillDateTime": "2018-12-21T03:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 68.47
+              },
+              {
+                  "name": "PM10",
+                  "value": 108.99
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 81.12,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Instead of running outdoors, how about a treadmill instead?.",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 273.9
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 217.97
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-21T03:00:00Z",
+          "tillDateTime": "2018-12-21T04:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 66.02
+              },
+              {
+                  "name": "PM10",
+                  "value": 105.81
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 80.01,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Instead of running outdoors, how about a treadmill instead?.",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 264.09
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 211.62
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-21T04:00:00Z",
+          "tillDateTime": "2018-12-21T05:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 64.41
+              },
+              {
+                  "name": "PM10",
+                  "value": 103.76
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 79.28,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Don't go out, unless you want to breathe like Darth Vader!",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 257.63
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 207.52
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-21T05:00:00Z",
+          "tillDateTime": "2018-12-21T06:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 63.08
+              },
+              {
+                  "name": "PM10",
+                  "value": 101.98
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 78.67,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Keep your windows closed today!",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 252.31
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 203.95
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-21T06:00:00Z",
+          "tillDateTime": "2018-12-21T07:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 62.16
+              },
+              {
+                  "name": "PM10",
+                  "value": 100.76
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 78.25,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "If you must go out today, a smog mask would be wise!",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 248.63
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 201.51
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-21T07:00:00Z",
+          "tillDateTime": "2018-12-21T08:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 61.37
+              },
+              {
+                  "name": "PM10",
+                  "value": 99.54
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 77.89,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Leave the car - trains, trams and buses are cool too!",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 245.46
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 199.09
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-21T08:00:00Z",
+          "tillDateTime": "2018-12-21T09:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 60.39
+              },
+              {
+                  "name": "PM10",
+                  "value": 97.98
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 77.45,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "If you must go out today, a smog mask would be wise!",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 241.55
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 195.97
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-21T09:00:00Z",
+          "tillDateTime": "2018-12-21T10:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 58.7
+              },
+              {
+                  "name": "PM10",
+                  "value": 95.4
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 76.68,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Instead of running outdoors, how about a treadmill instead?.",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 234.82
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 190.79
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-21T10:00:00Z",
+          "tillDateTime": "2018-12-21T11:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 56.51
+              },
+              {
+                  "name": "PM10",
+                  "value": 92.24
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 75.69,
+                  "level": "HIGH",
+                  "description": "Poor air quality!",
+                  "advice": "Don't go out, unless you want to breathe like Darth Vader!",
+                  "color": "#EF7120"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 226.04
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 184.48
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-21T11:00:00Z",
+          "tillDateTime": "2018-12-21T12:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 53.74
+              },
+              {
+                  "name": "PM10",
+                  "value": 88.29
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 73.93,
+                  "level": "MEDIUM",
+                  "description": "Well... It's been better.",
+                  "advice": "This isn't the best day for out-of-home activities.",
+                  "color": "#EFBB0F"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 214.95
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 176.57
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-21T12:00:00Z",
+          "tillDateTime": "2018-12-21T13:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 51.21
+              },
+              {
+                  "name": "PM10",
+                  "value": 85.05
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 71.91,
+                  "level": "MEDIUM",
+                  "description": "Well... It's been better.",
+                  "advice": "Things were good once... Let's hope it doesn't get worse!",
+                  "color": "#EFBB0F"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 204.84
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 170.1
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-21T13:00:00Z",
+          "tillDateTime": "2018-12-21T14:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 49.51
+              },
+              {
+                  "name": "PM10",
+                  "value": 83.05
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 70.66,
+                  "level": "MEDIUM",
+                  "description": "Well... It's been better.",
+                  "advice": "It's better to limit your outside physical activity today.",
+                  "color": "#EFBB0F"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 198.05
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 166.1
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-21T14:00:00Z",
+          "tillDateTime": "2018-12-21T15:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 48.87
+              },
+              {
+                  "name": "PM10",
+                  "value": 82.26
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 70.17,
+                  "level": "MEDIUM",
+                  "description": "Well... It's been better.",
+                  "advice": "The air is slightly polluted.",
+                  "color": "#EFBB0F"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 195.46
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 164.53
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-21T15:00:00Z",
+          "tillDateTime": "2018-12-21T16:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 49.07
+              },
+              {
+                  "name": "PM10",
+                  "value": 82.8
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 70.5,
+                  "level": "MEDIUM",
+                  "description": "Well... It's been better.",
+                  "advice": "The air doesn't encourage walking today.",
+                  "color": "#EFBB0F"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 196.3
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 165.59
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-21T16:00:00Z",
+          "tillDateTime": "2018-12-21T17:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 49.88
+              },
+              {
+                  "name": "PM10",
+                  "value": 84.25
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 71.4,
+                  "level": "MEDIUM",
+                  "description": "Well... It's been better.",
+                  "advice": "If you can, stay home.",
+                  "color": "#EFBB0F"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 199.51
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 168.49
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-21T17:00:00Z",
+          "tillDateTime": "2018-12-21T18:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 50.79
+              },
+              {
+                  "name": "PM10",
+                  "value": 85.84
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 72.4,
+                  "level": "MEDIUM",
+                  "description": "Well... It's been better.",
+                  "advice": "If you can, stay home.",
+                  "color": "#EFBB0F"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 203.17
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 171.68
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-21T18:00:00Z",
+          "tillDateTime": "2018-12-21T19:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 51.79
+              },
+              {
+                  "name": "PM10",
+                  "value": 87.46
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 73.41,
+                  "level": "MEDIUM",
+                  "description": "Well... It's been better.",
+                  "advice": "The air is slightly polluted.",
+                  "color": "#EFBB0F"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 207.16
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 174.92
+              }
+          ]
+      },
+      {
+          "fromDateTime": "2018-12-21T19:00:00Z",
+          "tillDateTime": "2018-12-21T20:00:00Z",
+          "values": [
+              {
+                  "name": "PM25",
+                  "value": 52.53
+              },
+              {
+                  "name": "PM10",
+                  "value": 88.76
+              }
+          ],
+          "indexes": [
+              {
+                  "name": "AIRLY_CAQI",
+                  "value": 74.22,
+                  "level": "MEDIUM",
+                  "description": "Well... It's been better.",
+                  "advice": "The smog is coming! :O",
+                  "color": "#EFBB0F"
+              }
+          ],
+          "standards": [
+              {
+                  "name": "WHO",
+                  "pollutant": "PM25",
+                  "limit": 25,
+                  "percent": 210.11
+              },
+              {
+                  "name": "WHO",
+                  "pollutant": "PM10",
+                  "limit": 50,
+                  "percent": 177.52
+              }
+          ]
+      }
+  ]
+}

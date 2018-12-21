@@ -29,7 +29,7 @@ module.exports = function weatherServiceModule(externalWeatherService) {
                             {
                                 time: momentTime.format("YYYY-MM-DD HH:mm"),
                                 temperature: hour.temperature,
-                                isDark: moment().isBefore(weatherData.daily.data[0].sunriseTime) || moment().isAfter(weatherData.daily.data[0].sunsetTime),
+                                isDark: momentTime.isBefore(weatherData.daily.data[0].sunriseTime) || moment().isAfter(weatherData.daily.data[0].sunsetTime),
                                 cloudiness: hour.cloudCover * 100,
                                 chanceOfRain: hour.precipType == "rain" ? hour.precipProbability * 100 : 0,
                                 chanceOfSnow: hour.precipType == "snow" || hour.precipType == "sleet" ? hour.precipProbability * 100 : 0
