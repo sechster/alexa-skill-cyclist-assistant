@@ -32,10 +32,15 @@ const handlers = {
 
             const cyclingCompanion = require("./cyclingCompanion");
             const duration = require('./duration');
+
+            let location = {
+                latitude: config.get("location.latitude"),
+                longitude: config.get("location.longitude")
+            };
         
             let self = this;
 
-            cyclingCompanion.getHints(this.event.request.intent.slots.distance.value)
+            cyclingCompanion.getHints(this.event.request.intent.slots.distance.value, location)
                 .then(function(result) { 
         
                   if (result.itMightSnow)

@@ -10,7 +10,12 @@ app.intent('What to wear', (conv, params) => {
     const cyclingCompanion = require("./cyclingCompanion");
     const duration = require('./duration');
 
-    return cyclingCompanion.getHints(params.distance.amount)
+    let location = {
+      latitude: config.get("location.latitude"),
+      longitude: config.get("location.longitude")
+    };
+
+    return cyclingCompanion.getHints(params.distance.amount, location)
         .then(function(result) { 
 
           if (result.itMightSnow)

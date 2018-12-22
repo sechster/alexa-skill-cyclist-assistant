@@ -21,10 +21,15 @@ describe('WeatherService', function(){
         let startTime = new Date(2018, 11, 20, 16, 0, 0, 0);
         let endTime = new Date(2018, 11, 20, 17, 0, 0, 0);
 
+        let location = {
+            latitude: "1",
+            longitude: "2"
+        };
+
         let sut = new Sut(darksky);
 
         // act & assert
-        expect(sut.getWeather({ startTime: startTime, endTime: endTime })).to.eventually.deep.equal({
+        expect(sut.getWeather({ startTime: startTime, endTime: endTime }, location)).to.eventually.deep.equal({
             'minimumTemperature': 1.17,
             'currentTemperature': 1.11,
             'hourly' : [

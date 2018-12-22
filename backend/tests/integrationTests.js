@@ -14,7 +14,7 @@ describe('Integration tests', function(){
     });
 
     it('cyclingCompanion', function(){
-        //cyclingCompanion.getHints(100).then(function(hints) {console.log(hints)});
+        //cyclingCompanion.getHints(100, {latitude: "51.087253", longitude: "16.911126"}).then(function(hints) {console.log(hints)});
     });
 
 });

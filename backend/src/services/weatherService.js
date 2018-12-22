@@ -1,13 +1,10 @@
 const moment = require('moment');
-const config = require('config');
 
 module.exports = function weatherServiceModule(externalWeatherService) {
 
-    function getWeather(timeWindow) {
-        let latitude = config.get("location.latitude");
-        let longitude = config.get("location.longitude");
+    function getWeather(timeWindow, location) {
         
-        return externalWeatherService.forecastWeather(latitude, longitude)
+        return externalWeatherService.forecastWeather(location.latitude, location.longitude)
             .then(function(weatherData) { 
                 let result = {
                     minimumTemperature: weatherData.daily.data[0].temperatureLow,

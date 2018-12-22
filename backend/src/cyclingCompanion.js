@@ -6,13 +6,13 @@ const masterAdvisor = require('./masterAdvisor');
 const rideTimeService = require("./services/rideTimeService");
 const moment = require('moment');
 
-module.exports.getHints = function getHintsModule(tripLength) {
+module.exports.getHints = function getHintsModule(tripLength, location) {
 
     let rideTime = rideTimeService.getRideTimeData(moment().toDate(), tripLength);
 
-    return weatherService.getWeather(rideTime)
+    return weatherService.getWeather(rideTime, location)
         .then(function(weather) {
-            return airConditionService.getCurrentAirCondition()
+            return airConditionService.getCurrentAirCondition(location)
             .then(function(airCondition) {
                 let conditions = require('./conditions')(weather, airCondition);
                 
