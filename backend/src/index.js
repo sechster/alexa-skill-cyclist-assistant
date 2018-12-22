@@ -29,19 +29,26 @@ const handlers = {
         if (!isSlotValid(this.event.request, "distance")) {
             delegateSlotCollection(this.event, this.emit);
         } else {
-            const attireAdvisor = require("./attireAdvisor");
-            const rideTimeService = require("./services/rideTimeService");
-            const duration = require('./duration');
 
+            const cyclingCompanion = require("./cyclingCompanion");
+            const duration = require('./duration');
+        
             let self = this;
 
-            let rideTime = rideTimeService.getRideTimeData(moment().toDate(), this.event.request.intent.slots.distance.value);
-            let durationText = duration.getText(rideTime.startTime, rideTime.endTime);
-
-            attireAdvisor.getAdvice(rideTime)
-                .then(function(advice) { 
-                    self.response.speak(`Ride will take: ${durationText}. ${advice}`);
+            cyclingCompanion.getHints(this.event.request.intent.slots.distance.value)
+                .then(function(result) { 
+        
+                  if (result.itMightSnow)
+                  {
+                    self.response.speak(`It might snow, you should stay home!`);
                     self.emit(':responseReady');
+                  }
+        
+                  let durationText = duration.getText(result.rideTime.startTime, result.rideTime.endTime);
+                  let attireAdvice = result.attireSet.map(value => "<p>" + value + ", </p>").join("<break time=\"700ms\"/>");
+                    
+                  self.response.speak(`<speak>Your ride will take about ${durationText}. You should wear: ${attireAdvice} Keep safe!</speak>`);
+                  self.emit(':responseReady');
                 });
         }
     },

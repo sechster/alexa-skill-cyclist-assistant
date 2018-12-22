@@ -11,8 +11,7 @@ module.exports = function weatherServiceModule(externalWeatherService) {
             .then(function(weatherData) { 
                 let result = {
                     minimumTemperature: weatherData.daily.data[0].temperatureLow,
-                    maximumTemperature: weatherData.daily.data[0].temperatureHigh,
-                    averageTemperature: (weatherData.daily.data[0].temperatureHigh + weatherData.daily.data[0].temperatureLow) / 2,
+                    currentTemperature: weatherData.currently.temperature,
                     hourly: new Array(),
                 }
 
@@ -27,7 +26,6 @@ module.exports = function weatherServiceModule(externalWeatherService) {
                         result.hourly.push(
                             {
                                 time: momentTime.format("YYYY-MM-DD HH:mm"),
-                                temperature: hour.temperature,
                                 isDark: momentTime.isBefore(weatherData.daily.data[0].sunriseTime) || moment().isAfter(weatherData.daily.data[0].sunsetTime),
                                 cloudiness: hour.cloudCover * 100,
                                 chanceOfRain: hour.precipType == "rain" ? hour.precipProbability * 100 : 0,

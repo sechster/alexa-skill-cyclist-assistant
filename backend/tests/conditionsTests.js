@@ -7,54 +7,6 @@ const expect = chai.expect;
 
 describe('Conditions', function(){
 
-    it('getCurrentSeason returns summer over a specific minimum temperature threshold', function(){
-
-        // arrange
-        let sut = new Sut({ minimumTemperature: config.get('weather.summerMinTemperatureThreshold') + 1 });
-
-        // act
-        let result = sut.getCurrentSeason();
-
-        // assert
-        expect(result).to.equal("summer");
-    });
-
-    it('getCurrentSeason returns spring over a specific minimum temperature threshold, but below summer threshold', function(){
-
-        // arrange
-        let sut = new Sut({ minimumTemperature: config.get('weather.springMinTemperatureThreshold') + 1 });
-
-        // act
-        let result = sut.getCurrentSeason();
-
-        // assert
-        expect(result).to.equal("spring");
-    });
-
-    it('getCurrentSeason returns autumn over a specific minimum temperature threshold, but below spring threshold', function(){
-
-        // arrange
-        let sut = new Sut({ minimumTemperature: config.get('weather.autumnMinTemperatureThreshold') + 1 });
-
-        // act
-        let result = sut.getCurrentSeason();
-
-        // assert
-        expect(result).to.equal("autumn");
-    });
-
-    it('getCurrentSeason returns winter below all thresholds', function(){
-
-        // arrange
-        let sut = new Sut({ minimumTemperature: config.get('weather.autumnMinTemperatureThreshold') - 1 });
-
-        // act
-        let result = sut.getCurrentSeason();
-
-        // assert
-        expect(result).to.equal("winter");
-    });
-
     it('isCloudy returns true above configured threshold', function(){
 
         // arrange
@@ -167,13 +119,13 @@ describe('Conditions', function(){
         expect(result).to.equal(-123);
     });
 
-    it('getAverageTemperature returns average temperature', function(){
+    it('getCurrentTemperature returns current temperature', function(){
 
         // arrange
-        let sut = new Sut({ averageTemperature: -223 });
+        let sut = new Sut({ currentTemperature: -223 });
 
         // act
-        let result = sut.getAverageTemperature();
+        let result = sut.getCurrentTemperature();
 
         // assert
         expect(result).to.equal(-223);

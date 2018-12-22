@@ -1,6 +1,6 @@
 const apixu = require('./../src/externalServices/apixu');
 const airly = require('./../src/externalServices/airly');
-const attireAdvisor = require('./../src/attireAdvisor');
+const cyclingCompanion = require('./../src/cyclingCompanion');
 const moment = require('moment');
 
 describe('Integration tests', function(){
@@ -13,8 +13,8 @@ describe('Integration tests', function(){
         //airly.getMeasurement(51.087253, 16.911126).then(function(response) {console.log(JSON.stringify(response));} );
     });
 
-    it('attireAdvisor', function(){
-        //attireAdvisor.getAdvice({ startTime: moment().toDate(), endTime: moment().add(3, 'h').toDate() }).then(function(advice) {console.log(advice)});
+    it('cyclingCompanion', function(){
+        //cyclingCompanion.getHints(100).then(function(hints) {console.log(hints)});
     });
 
 });
