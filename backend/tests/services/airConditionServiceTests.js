@@ -19,10 +19,15 @@ describe('AirConditionService', function(){
             return new Promise((resolve, reject) => { return resolve(exampleAirlyMeasurementResponse) });
         });
 
+        let location = {
+            latitude: "1",
+            longitude: "2"
+        };
+
         let sut = new Sut(airly);
 
         // act & assert
-        expect(sut.getCurrentAirCondition()).to.eventually.deep.equal({
+        expect(sut.getCurrentAirCondition(location)).to.eventually.deep.equal({
             'caqiLevel': 85.44,
          });
     });

@@ -2,22 +2,6 @@ const config = require('config');
 
 module.exports = function conditionsModule(weather, airCondition) {
 
-    function getCurrentSeason() {
-        if (weather.minimumTemperature > config.get('weather.summerMinTemperatureThreshold')) {
-            return "summer";
-        }
-
-        if (weather.minimumTemperature > config.get('weather.springMinTemperatureThreshold')) {
-            return "spring";
-        }
-
-        if (weather.minimumTemperature > config.get('weather.autumnMinTemperatureThreshold')) {
-            return "autumn";
-        }
-
-        return "winter";
-    }
-
     function isCloudy() {
         return (weather.hourly.some(x => x.cloudiness > config.get('weather.isCloudyThreshold')));
     }
@@ -42,19 +26,23 @@ module.exports = function conditionsModule(weather, airCondition) {
         return weather.minimumTemperature;
     }
 
-    function getAverageTemperature() {
-        return weather.averageTemperature;
+    function getMaximumTemperature() {
+        return weather.maximumTemperature;
+    }
+
+    function getCurrentTemperature() {
+        return weather.currentTemperature;
     }
 
     let publicApi = {
-        getCurrentSeason: getCurrentSeason,
         isCloudy: isCloudy,
         isDark: isDark,
         isSmoggy: isSmoggy,
         itMightRain: itMightRain,
         itMightSnow: itMightSnow,
         getMinimumTemperature: getMinimumTemperature,
-        getAverageTemperature: getAverageTemperature,
+        getMaximumTemperature: getMaximumTemperature,
+        getCurrentTemperature: getCurrentTemperature,
     }
 
     return publicApi;

@@ -1,12 +1,8 @@
-const config = require('config');
-
 module.exports = function airConditionService(externalAirConditionService) {
 
-    function getCurrentAirCondition() {
-        let latitude = config.get('location.latitude');
-        let longitude = config.get('location.longitude');
+    function getCurrentAirCondition(location) {
 
-        return externalAirConditionService.getMeasurement(latitude, longitude)
+        return externalAirConditionService.getMeasurement(location.latitude, location.longitude)
             .then(function(airConditionData) { 
                 let result = {
                     caqiLevel: airConditionData.current.indexes.filter(index => index.name == "AIRLY_CAQI")[0].value,

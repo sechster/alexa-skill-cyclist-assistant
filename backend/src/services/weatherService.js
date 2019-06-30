@@ -1,18 +1,15 @@
 const moment = require('moment');
-const config = require('config');
 
 module.exports = function weatherServiceModule(externalWeatherService) {
 
-    function getWeather(timeWindow) {
-        let latitude = config.get("location.latitude");
-        let longitude = config.get("location.longitude");
+    function getWeather(timeWindow, location) {
         
-        return externalWeatherService.forecastWeather(latitude, longitude)
+        return externalWeatherService.forecastWeather(location.latitude, location.longitude)
             .then(function(weatherData) { 
                 let result = {
                     minimumTemperature: weatherData.daily.data[0].temperatureLow,
                     maximumTemperature: weatherData.daily.data[0].temperatureHigh,
-                    averageTemperature: (weatherData.daily.data[0].temperatureHigh + weatherData.daily.data[0].temperatureLow) / 2,
+                    currentTemperature: weatherData.currently.temperature,
                     hourly: new Array(),
                 }
 
@@ -27,7 +24,6 @@ module.exports = function weatherServiceModule(externalWeatherService) {
                         result.hourly.push(
                             {
                                 time: momentTime.format("YYYY-MM-DD HH:mm"),
-                                temperature: hour.temperature,
                                 isDark: momentTime.isBefore(weatherData.daily.data[0].sunriseTime) || moment().isAfter(weatherData.daily.data[0].sunsetTime),
                                 cloudiness: hour.cloudCover * 100,
                                 chanceOfRain: hour.precipType == "rain" ? hour.precipProbability * 100 : 0,
