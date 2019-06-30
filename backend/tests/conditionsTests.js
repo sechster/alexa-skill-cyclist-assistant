@@ -119,6 +119,18 @@ describe('Conditions', function(){
         expect(result).to.equal(-123);
     });
 
+    it('getMaximumTemperature returns maximum temperature', function(){
+
+        // arrange
+        let sut = new Sut({ maximumTemperature: 123 });
+
+        // act
+        let result = sut.getMaximumTemperature();
+
+        // assert
+        expect(result).to.equal(123);
+    });
+
     it('getCurrentTemperature returns current temperature', function(){
 
         // arrange

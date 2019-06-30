@@ -26,6 +26,10 @@ module.exports = function conditionsModule(weather, airCondition) {
         return weather.minimumTemperature;
     }
 
+    function getMaximumTemperature() {
+        return weather.maximumTemperature;
+    }
+
     function getCurrentTemperature() {
         return weather.currentTemperature;
     }
@@ -37,6 +41,7 @@ module.exports = function conditionsModule(weather, airCondition) {
         itMightRain: itMightRain,
         itMightSnow: itMightSnow,
         getMinimumTemperature: getMinimumTemperature,
+        getMaximumTemperature: getMaximumTemperature,
         getCurrentTemperature: getCurrentTemperature,
     }
 

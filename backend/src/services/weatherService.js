@@ -8,6 +8,7 @@ module.exports = function weatherServiceModule(externalWeatherService) {
             .then(function(weatherData) { 
                 let result = {
                     minimumTemperature: weatherData.daily.data[0].temperatureLow,
+                    maximumTemperature: weatherData.daily.data[0].temperatureHigh,
                     currentTemperature: weatherData.currently.temperature,
                     hourly: new Array(),
                 }

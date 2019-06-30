@@ -31,6 +31,7 @@ describe('WeatherService', function(){
         // act & assert
         expect(sut.getWeather({ startTime: startTime, endTime: endTime }, location)).to.eventually.deep.equal({
             'minimumTemperature': 1.17,
+            'maximumTemperature': 2.01,
             'currentTemperature': 1.11,
             'hourly' : [
                 {
