@@ -4,34 +4,24 @@ module.exports = function masterAdvisorModule() {
     {
         headGearAdvisor: require("./attireAdvisors/headGearAdvisor"),
         smogMaskAdvisor: require("./attireAdvisors/smogMaskAdvisor"),
-        shirtAdvisor: require("./attireAdvisors/shirtAdvisor"),
-        jacketAdvisor: require("./attireAdvisors/jacketAdvisor"),
+        torsoAdvisor: require("./attireAdvisors/torsoAdvisor"),
         glovesAdvisor: require("./attireAdvisors/glovesAdvisor"),
-        pantsAdvisor: require("./attireAdvisors/pantsAdvisor"),
-        socksAdvisor: require("./attireAdvisors/socksAdvisor"),
-        shoesAdvisor: require("./attireAdvisors/shoesAdvisor"),
-        overshoesAdvisor: require("./attireAdvisors/overshoesAdvisor"),
-        armWarmersAdvisor: require("./attireAdvisors/armWarmersAdvisor"),
-        legWarmersAdvisor: require("./attireAdvisors/legWarmersAdvisor"),
+        legsAdvisor: require("./attireAdvisors/legsAdvisor"),
+        feetAdvisor: require("./attireAdvisors/feetAdvisor"),
         glassesAdvisor: require("./attireAdvisors/glassesAdvisor")
     };
 
     let advisors = new Array();
     advisors.push(attireAdvisors.headGearAdvisor());
     advisors.push(attireAdvisors.smogMaskAdvisor());
-    advisors.push(attireAdvisors.shirtAdvisor());
-    advisors.push(attireAdvisors.jacketAdvisor());
+    advisors.push(attireAdvisors.torsoAdvisor());
     advisors.push(attireAdvisors.glovesAdvisor());
-    advisors.push(attireAdvisors.pantsAdvisor());
-    advisors.push(attireAdvisors.socksAdvisor());
-    advisors.push(attireAdvisors.shoesAdvisor());
-    advisors.push(attireAdvisors.overshoesAdvisor());
-    advisors.push(attireAdvisors.armWarmersAdvisor());
-    advisors.push(attireAdvisors.legWarmersAdvisor());
+    advisors.push(attireAdvisors.legsAdvisor());
+    advisors.push(attireAdvisors.feetAdvisor());
     advisors.push(attireAdvisors.glassesAdvisor());
 
     function advise(conditions) {
-        let attireSet = advisors.map(a => a.advise(conditions)).filter(b => b != "");
+        let attireSet = advisors.map(a => a.advise(conditions)).reduce((x, y) => x.concat(y));
         return attireSet;
     }
 

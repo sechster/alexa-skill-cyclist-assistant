@@ -1,13 +1,13 @@
 let chai = require('chai');
 let sinon = require('sinon');
 
-let Sut = require('../../src/attireAdvisors/legAdvisor');
+let Sut = require('../../src/attireAdvisors/legsAdvisor');
 let Conditions = require('../../src/conditions');
 
 let expect = chai.expect;
 
 
-describe('legAdvisor', function() {
+describe('legsAdvisor', function() {
 
   const notImportant = 0;
 

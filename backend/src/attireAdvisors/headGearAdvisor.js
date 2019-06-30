@@ -1,29 +1,30 @@
 module.exports = function headGearAdvisorModule() {
+    const balaclavaThreshold = 0;
+    const winterCapThreshold = 10;
 
     function advise(conditions) {
-        if (conditions.getCurrentTemperature() <= 0) {
-            return "balaclava";
+        let advice = new Array();
+        let minTemperature = conditions.getMinimumTemperature();
+
+        if (minTemperature <= balaclavaThreshold) {
+            advice.push("wear balaclava");
         }
-        else if (conditions.getCurrentTemperature() <= 10) {
-            return "winter cap";
+        else if (minTemperature <= winterCapThreshold) {
+            advice.push("wear winter cap");
+        }
+        else {
+            if (conditions.isCloudy() == false) {
+                advice.push("wear cycling cap");
+            }
         }
 
-        if (conditions.getMinimumTemperature() <= 0) {
-            return "take a balaclava";
-        }
-        else if (conditions.getMinimumTemperature() <= 10) {
-            return "take a winter cap";
-        }
-
-        if (conditions.isCloudy() == false) {
-            return "cycling cap";
-        }
-
-        return "";
+        return advice;
     }
 
     let publicApi = {
         advise: advise,
+        balaclavaThreshold: balaclavaThreshold,
+        winterCapThreshold: winterCapThreshold,
     } 
 
     return publicApi;

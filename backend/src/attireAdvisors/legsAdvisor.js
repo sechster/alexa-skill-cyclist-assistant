@@ -1,4 +1,4 @@
-module.exports = function legAdvisorModule() {
+module.exports = function legsAdvisorModule() {
     const longPantsThreshold = 10;
 
     function advise(conditions) {
@@ -6,7 +6,7 @@ module.exports = function legAdvisorModule() {
         let minTemperature = conditions.getMinimumTemperature();
         let currentTemperature = conditions.getCurrentTemperature();
         let maxTemperature = conditions.getMaximumTemperature();
-        let itWillGetColder = currentTemperature > minTemperature
+        let itWillGetColder = currentTemperature > minTemperature;
 
         if (maxTemperature < longPantsThreshold) {
             advice.push('wear long pants');

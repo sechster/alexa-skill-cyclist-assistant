@@ -20,7 +20,7 @@ describe('smogMaskAdvisor', function() {
     let result = sut.advise(conditions);
 
     // assert
-    expect(result).to.equal("smog mask");
+    expect(result).to.include.members(["wear smog mask"]);
   });
 
 
@@ -35,7 +35,7 @@ describe('smogMaskAdvisor', function() {
     let result = sut.advise(conditions);
 
     // assert
-    expect(result).to.equal("");
+    expect(result).not.to.include.members(["wear smog mask"]);
   });
 
 

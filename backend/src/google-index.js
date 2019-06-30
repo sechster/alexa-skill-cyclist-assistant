@@ -27,7 +27,7 @@ app.intent('What to wear', (conv, params) => {
           let durationText = duration.getText(result.rideTime.startTime, result.rideTime.endTime);
           let attireAdvice = result.attireSet.map(value => "<p>" + value + ", </p>").join("<break time=\"700ms\"/>");
             
-          conv.close(`<speak>Your ride will take about ${durationText}. You should wear: ${attireAdvice} Keep safe!</speak>`);
+          conv.close(`<speak>Your ride will take about ${durationText}. You should: ${attireAdvice} Keep safe!</speak>`);
         });
   });
 

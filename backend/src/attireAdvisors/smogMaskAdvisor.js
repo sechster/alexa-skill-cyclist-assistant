@@ -1,11 +1,12 @@
 module.exports = function smogMaskAdvisorModule() {
 
     function advise(conditions) {
+        let advice = new Array();
         if (conditions.isSmoggy()) {
-            return "smog mask";
+            advice.push("wear smog mask");
         }
 
-        return "";
+        return advice;
     }
 
     let publicApi = {

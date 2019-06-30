@@ -1,19 +1,28 @@
 module.exports = function glovesAdvisorModule() {
+    const winterGlovesThreshold = 5;
+    const autumnGlovesThreshold = 10;
 
     function advise(conditions) {
-        if (conditions.getMinimumTemperature() < 5) {
-            return "winter gloves";
+        let advice = new Array();
+        let minimumTemperature = conditions.getMinimumTemperature();
+
+        if (minimumTemperature < winterGlovesThreshold) {
+            advice.push("wear winter gloves");
         }
-        else if (conditions.getMinimumTemperature() < 15) {
-            return "autumn gloves";
+        else if (minimumTemperature < autumnGlovesThreshold) {
+            advice.push("wear autumn gloves");
         }
         else {
-            return "short gloves";
+            advice.push("wear short gloves");
         }
+
+        return advice;
     }
 
     let publicApi = {
         advise: advise,
+        winterGlovesThreshold: winterGlovesThreshold,
+        autumnGlovesThreshold: autumnGlovesThreshold,
     } 
 
     return publicApi;
