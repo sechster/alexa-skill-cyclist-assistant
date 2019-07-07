@@ -18,8 +18,8 @@ describe('WeatherService', function(){
         sinon.stub(darksky, 'forecastWeather').callsFake(function() {
             return new Promise((resolve, reject) => { return resolve(exampleDarkSkyForecastResponse) });
         });
-        let startTime = new Date(2018, 11, 20, 16, 0, 0, 0);
-        let endTime = new Date(2018, 11, 20, 17, 0, 0, 0);
+        let startTime = new Date(2018, 11, 21, 14, 0, 0, 0);
+        let endTime = new Date(2018, 11, 21, 16, 0, 0, 0);
 
         let location = {
             latitude: "1",
@@ -28,25 +28,36 @@ describe('WeatherService', function(){
 
         let sut = new Sut(darksky);
 
-        // act & assert
-        expect(sut.getWeather({ startTime: startTime, endTime: endTime }, location)).to.eventually.deep.equal({
-            'minimumTemperature': 1.17,
-            'maximumTemperature': 2.01,
+        // act
+        let result = sut.getWeather({ startTime: startTime, endTime: endTime }, location);
+        result.then(x => console.log(x));
+
+        // assert
+        expect(result).to.eventually.deep.equal({
+            'minimumTemperature': 4.38,
+            'maximumTemperature': 5.22,
             'currentTemperature': 1.11,
             'hourly' : [
                 {
-                    'time': "2018-12-20 16:00",
-                    'isDark': true,
-                    'cloudiness': 79,
-                    'chanceOfRain': 0,
-                    'chanceOfSnow': 22
+                    'time': "2018-12-21 14:00",
+                    'isDark': false,
+                    'cloudiness': 99,
+                    'chanceOfRain': 12,
+                    'chanceOfSnow': 0
                 },
                 {
-                    'time': "2018-12-20 17:00",
+                    'time': "2018-12-21 15:00",
+                    'isDark': false,
+                    'cloudiness': 100,
+                    'chanceOfRain': 20,
+                    'chanceOfSnow': 0
+                },
+                {
+                    'time': "2018-12-21 16:00",
                     'isDark': true,
-                    'cloudiness': 88,
-                    'chanceOfRain': 0,
-                    'chanceOfSnow': 20
+                    'cloudiness': 100,
+                    'chanceOfRain': 30,
+                    'chanceOfSnow': 0
                 },
             ]
          });
