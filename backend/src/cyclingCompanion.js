@@ -8,8 +8,8 @@ const moment = require('moment');
 
 module.exports.getHints = function getHintsModule(tripLength, location) {
 
-    let rideTime = rideTimeService.getRideTimeData(moment().toDate(), tripLength);
-
+    let rideTime = rideTimeService.getRideTimeData((new moment()).toDate(), tripLength);
+    
     return weatherService.getWeather(rideTime, location)
         .then(function(weather) {
             return airConditionService.getCurrentAirCondition(location)

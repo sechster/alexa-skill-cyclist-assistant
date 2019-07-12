@@ -12,22 +12,22 @@ module.exports = function weatherServiceModule(externalWeatherService) {
                 }
 
                 let hours = weatherData.hourly.data;
-                let momentStartTime = moment(timeWindow.startTime);
-                let momentEndTime = moment(timeWindow.endTime);
+                let momentStartTime = new moment(timeWindow.startTime);
+                let momentEndTime = new moment(timeWindow.endTime);
                 let minTemp = null;
                 let maxTemp = null;
-                
+
                 for(let i = 0; i < hours.length; i++) {
+                    
                     let hour = hours[i];
                     let momentTime = new moment.unix(hour.time);
-
+                    
                     if (momentTime.isSameOrAfter(momentStartTime) && momentTime.isSameOrBefore(momentEndTime)) {
-
-                        if (minTemp === null || minTemp > hour.temperature) {
+                        if (minTemp == null || minTemp > hour.temperature) {
                             minTemp = hour.temperature;
                         }
     
-                        if (maxTemp === null || maxTemp < hour.temperature) {
+                        if (maxTemp == null || maxTemp < hour.temperature) {
                             maxTemp = hour.temperature;
                         }
 
