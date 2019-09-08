@@ -1,8 +1,8 @@
 module.exports = function torsoAdvisorModule() {
     const cyclingJacketThreshold = 5;
     const thinJacketThreshold = 10;
-    const rainJacketThreshold = 15;
-    const longSleeveThreshold = 15;
+    const rainJacketThreshold = 16;
+    const longSleeveThreshold = 16;
 
     function advise(conditions) {
         let advice = new Array();
