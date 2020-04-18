@@ -12,16 +12,16 @@
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "chai-datetime": "^1.5.0",
-    "mocha": "^6.1.4",
-    "sinon": "^7.3.2"
+    "mocha": "^7.1.1",
+    "sinon": "^9.0.2"
   },
   "dependencies": {
-    "actions-on-google": "^2.9.0",
+    "actions-on-google": "^2.12.0",
     "alexa-sdk": "^1.0.25",
-    "config": "^3.2.0",
+    "config": "^3.3.1",
     "moment": "^2.24.0",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.4"
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5"
   },
   "repository": {
     "type": "git",

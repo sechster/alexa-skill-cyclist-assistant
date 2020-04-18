@@ -27,12 +27,15 @@ describe('RideTimeService', function() {
     expect(result.startTime).to.equalTime(now);
   });
 
-  it('getRideTimeData should consider 25km/h average speed for first 25 kms (2.4 min / km)', function() {
+  it('getRideTimeData should consider ' + averageSpeed + ' average speed for first ' + averageSpeed + ' kms', function() {
 
     // arrange
     let now = moment().toDate();
-    let rideDistance = 20;
-    let endTime = moment(now).add(48, 'm').toDate();
+    let rideDistance = 20.0;
+    let endTime = 
+      moment(now)
+        .add(rideDistance / averageSpeed * 60, 'm')
+        .toDate();
     
     // act
     let result = sut.getRideTimeData(now, rideDistance);
@@ -41,12 +44,16 @@ describe('RideTimeService', function() {
     expect(result.endTime).to.equalTime(endTime);
   });
 
-  it('getRideTimeData should consider 25km/h average speed and 10 minute break after each 25 kms', function() {
+  it('getRideTimeData should consider ' + averageSpeed + 'km/h average speed and 10 minute break after each ' + averageSpeed + ' kms', function() {
 
     // arrange
     let now = moment().toDate();
     let rideDistance = 76;
-    let endTime = moment(now).add(182.4, 'm').add(30, 'm').toDate();
+    let endTime = 
+      moment(now)
+        .add(rideDistance / averageSpeed * 60, 'm')
+        .add(Math.floor(rideDistance / averageSpeed) * 10, 'm')
+        .toDate();
 
     // act
     let result = sut.getRideTimeData(now, rideDistance);
@@ -55,12 +62,17 @@ describe('RideTimeService', function() {
     expect(result.endTime).to.equalTime(endTime);
   });
 
-  it('getRideTimeData should consider 25km/h average speed and 10 minute break after each 25 kms and 30 minutes every 100 km', function() {
+  it('getRideTimeData should consider ' + averageSpeed + 'km/h average speed and 10 minute break after each ' + averageSpeed + ' kms and 30 minutes every 100 km', function() {
 
     // arrange
     let now = moment().toDate();
-    let rideDistance = 203;
-    let endTime = moment(now).add(487.2, 'm').add(80, 'm').add(60, 'm').toDate();
+    let rideDistance = 203.0;
+    let endTime = 
+      moment(now)
+        .add(rideDistance / averageSpeed * 60, 'm')
+        .add(Math.floor(rideDistance / averageSpeed) * 10, 'm')
+        .add(Math.floor(rideDistance / 100) * 30, 'm')
+        .toDate();
 
     // act
     let result = sut.getRideTimeData(now, rideDistance);
