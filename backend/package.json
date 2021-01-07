@@ -16,7 +16,7 @@
     "sinon": "^9.2.1"
   },
   "dependencies": {
-    "actions-on-google": "^2.13.0",
+    "actions-on-google": "^1.2.1",
     "alexa-sdk": "^1.0.25",
     "config": "^3.3.2",
     "moment": "^2.29.1",
