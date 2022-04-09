@@ -19,7 +19,7 @@
     "actions-on-google": "^2.13.0",
     "alexa-sdk": "^1.0.25",
     "config": "^3.3.2",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "request": "^2.88.2",
     "request-promise": "^4.2.5"
   },
